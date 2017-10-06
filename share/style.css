@@ -1,0 +1,157 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+body {
+  background-color: #333333;
+}
+
+body,
+.container {
+  padding: 0;
+  min-width: 0;
+}
+
+.share {
+  display: inline-flex;
+  padding: 16px;
+}
+
+.share__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.share__social-buttons {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 16px;
+}
+
+.social-button {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: inline-block;
+  background: none;
+  border: 0;
+  transition: all 0.2s ease-in-out;
+}
+
+.social-button:hover {
+  transform: scale(1.2);
+  /* Glue standard button scaling is 1.1 but that
+    makes round buttons 32px big look cut off */
+}
+
+.social-button.embed:hover {
+  background-image: url("/img/embed_white.svg") !important;
+}
+
+.social-button.spotify_uri:hover {
+  background-image: url("/img/spotify_uri_white.svg") !important;
+}
+
+.social-button + .social-button {
+  margin-left: 16px;
+}
+
+.social-button--embed {
+  background-image: url("/img/embed.svg");
+}
+
+.social-button--facebook {
+  background-image: url("/img/facebook.svg");
+}
+
+.social-button--messenger {
+  background-image: url("/img/messenger.svg");
+}
+
+.social-button--skype {
+  background-image: url("/img/skype.svg");
+}
+
+.social-button--spotify_uri {
+  background-image: url("/img/spotify_uri.svg");
+}
+
+.social-button--telegram {
+  background-image: url("/img/telegram.svg");
+}
+
+.social-button--tumblr {
+  background-image: url("/img/tumblr.svg");
+}
+
+.social-button--twitter {
+  background-image: url("/img/twitter.svg");
+}
+
+.copy-to-clipboard-button {
+  display: flex;
+  justify-content: center;
+}

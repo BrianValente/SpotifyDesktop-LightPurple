@@ -1,0 +1,159 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+#album-page {
+  padding-bottom: 20px;
+}
+
+#header {
+  position: relative;
+  z-index: 3;
+}
+
+#content {
+  position: relative;
+  z-index: 1;
+}
+
+.tl-attention-highlight {
+  z-index: 2;
+}
+
+.header.header-album {
+  margin-bottom: 22px;
+}
+
+#album-tracks {
+  margin-bottom: 20px;
+}
+
+#offline-notice,
+.throbber,
+.error {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  margin-top: -5%;
+  text-align: center;
+}
+
+.error {
+  display: none;
+  margin-top: -12%;
+}
+
+.similar-albums {
+  position: relative;
+}
+
+.copyrights {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.015em;
+}
+
+.glue-page-header__artists {
+  margin-bottom: 5px;
+}
+
+/* tooltip */
+.artists-tooltip-target {
+  padding: 0 20px 10px;
+  margin: 0 -20px;
+}
+
+.artists-tooltip {
+  display: none;
+  position: fixed;
+  pointer-events: all;
+  text-align: center;
+  margin-left: -7px;
+  transform: translateX(-50%);
+}
+
+.artists-tooltip::before {
+  content: '';
+  position: absolute;
+  top: -7px;
+  left: 50%;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 7px solid #333333;
+}
+
+/* RELEASE WINDOW NOTIFICATIONS */
+.release-window-notification {
+  border: 1px solid #282828;
+  color: #b3b3b3;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 38px 70px;
+}
+
+.release-windowed .header.header-album {
+  margin-bottom: 16px;
+}

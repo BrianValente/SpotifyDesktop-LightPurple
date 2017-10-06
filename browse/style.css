@@ -1,0 +1,956 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+.billboard-ad {
+  padding-right: 30px;
+  padding-left: 30px;
+  display: none;
+  z-index: 9;
+  /* More than this makes it cover the search dropdown */
+  overflow: hidden;
+  opacity: 0;
+  background: rgba(18, 19, 20, 0.95);
+  transition: background-color 0.5s, opacity 0.5s;
+}
+
+.billboard-ad a {
+  border: none;
+}
+
+.billboard-ad.dummy {
+  display: block;
+  visibility: none;
+}
+
+.billboard-ad.visible {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.billboard-ad.ready {
+  opacity: 1;
+}
+
+.billboard-ad .minimizer {
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: none;
+  color: #ffffff;
+  opacity: 0.3;
+  transition: opacity 0.5s;
+  position: fixed;
+  right: 0;
+  top: -2px;
+  display: none;
+}
+
+.billboard-ad .minimizer:hover {
+  opacity: 0.7;
+}
+
+.billboard-ad .minimizer:focus {
+  opacity: 0.9;
+}
+
+.billboard-ad .minimizer.visible {
+  display: block;
+}
+
+.billboard-ad .billboard-wrapper {
+  transform: translate3d(0, 0, 0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.billboard-ad .billboard {
+  position: static;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.billboard-ad .billboard img {
+  height: 100%;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.billboard-ad .billboard .disclaimer {
+  display: block;
+  width: 100%;
+  text-align: center;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.billboard-ad .billboard .title {
+  display: block;
+  text-align: center;
+  font-size: 19px;
+  height: 20px;
+  color: #ffffff;
+}
+
+.billboard-ad .footer {
+  position: absolute;
+  bottom: -122px;
+  left: 0;
+  right: 0;
+  height: 122px;
+  transition: background-color 0.5s 0.2s;
+  pointer-events: auto;
+  border-top: 1px solid #282828;
+  background-color: rgba(24, 24, 24, 0);
+}
+
+.billboard-ad .footer .companion {
+  height: 90px;
+  display: block;
+  max-width: 720px;
+  width: 100%;
+  transition: margin 0.5s ease 0.2s, opacity 0.5s ease 0.2s;
+  cursor: pointer;
+  margin: 46px auto 0;
+  opacity: 0;
+}
+
+.billboard-ad .footer .companion img {
+  height: auto;
+  width: 100%;
+}
+
+.billboard-ad.minimized {
+  background: rgba(18, 19, 20, 0);
+  pointer-events: none;
+}
+
+.billboard-ad.minimized .footer {
+  background-color: #181818;
+}
+
+.billboard-ad.minimized .footer .companion {
+  margin-top: 16px;
+  opacity: 1;
+}
+
+.billboard-ad.minimized .minimizer {
+  display: none;
+}
+
+.billboard-ad.minimized .billboard-wrapper {
+  animation: 0.5s downAndOut;
+  animation-fill-mode: forwards;
+}
+
+.billboard-ad.minimized .footer {
+  bottom: 0;
+}
+
+@keyframes downAndOut {
+  100% {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 1600px), (max-height: 975px) {
+  .billboard-ad.video .billboard-wrapper {
+    width: 1000px;
+  }
+}
+
+@media (max-width: 1200px), (max-height: 825px) {
+  .billboard-ad .billboard-wrapper {
+    width: 800px;
+  }
+}
+
+@media (max-width: 1000px), (max-height: 725px) {
+  .billboard-ad .billboard-wrapper {
+    width: 600px;
+  }
+}
+
+#leaderboard-ad-wrapper {
+  z-index: 4;
+  position: relative;
+  overflow: hidden;
+}
+
+#leaderboard-ad-wrapper .click-block-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 24, 24, 0.8);
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#leaderboard-ad-wrapper .click-block-overlay.active {
+  display: flex;
+}
+
+#leaderboard-ad-wrapper .click-block-overlay:hover {
+  color: transparent;
+}
+
+#leaderboard-ad-wrapper .click-block-overlay .click-button-wrapper {
+  text-align: center;
+}
+
+#leaderboard-ad-element {
+  width: 760px;
+  height: 90px;
+  margin: 16px auto;
+  position: relative;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+@media (max-width: 1024px) {
+  #leaderboard-ad-element {
+    padding: 0 8px;
+    margin: 8px auto;
+  }
+}
+
+@media (max-height: 768px) {
+  #leaderboard-ad-element {
+    margin: 8px auto;
+  }
+}
+
+.ne-bg-image {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-size: cover;
+}
+
+.bg-centered {
+  background-position: center;
+}
+
+.blurred {
+  opacity: 0.4;
+  filter: blur(30px);
+}
+
+.ne-header {
+  padding-bottom: 20px;
+}
+
+.ne-container {
+  z-index: 2;
+  padding-top: 25px;
+}
+
+.ne-container .ne-container-center {
+  max-width: 685px;
+  margin: 0 auto;
+}
+
+.ne-container .ne-title {
+  font-size: 36px;
+  line-height: 38px;
+}
+
+.ne-container .ne-attrib {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.ne-container .exclusive {
+  color: #7ab800;
+}
+
+.ne-bottom-fade {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  box-shadow: 0 52px 105px 121px #181818;
+}
+
+.ne-left-fade {
+  height: 100%;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: linear-gradient(to left, rgba(18, 19, 20, 0) 0%, #181818 100%);
+}
+
+.ne-right-fade {
+  height: 100%;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  background: linear-gradient(to right, rgba(18, 19, 20, 0) 0%, #181818 100%);
+}
+
+/* GLUE OVERRIDES */
+.h-main-content .h-title {
+  max-height: 79px;
+  margin-bottom: 0;
+}
+
+.h-main-content .h-description {
+  font-size: 12px;
+  color: #adaeb3;
+}
+
+.ne-container.sponsored {
+  height: 350px;
+}
+
+.sponsored-credits {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  max-height: 28px;
+  max-width: 230px;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 750px) {
+  .sponsored-credits {
+    display: none;
+  }
+}
+
+/* GLUE RESIZING OVERRIDES */
+@media screen and (max-width: 804px) {
+  .h-media {
+    width: 210px;
+    padding-bottom: 16px;
+  }
+  .h-description {
+    display: -webkit-box;
+    visibility: visible;
+  }
+  .h-controllers {
+    left: auto;
+  }
+}
+
+#hpto {
+  position: relative;
+  overflow: hidden;
+}
+
+#hpto-container {
+  margin-bottom: 14px;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: height 500ms ease;
+}
+
+#hpto-container .h-controllers {
+  left: auto !important;
+}
+
+#hpto-container .ad-container {
+  background-position: center top;
+  background-repeat: no-repeat;
+  min-height: 270px;
+}
+
+#hpto-container .ad-container.image-hpto {
+  min-height: 0;
+  text-align: center;
+}
+
+#hpto-container .ad-container .hpto-image-creative {
+  max-width: 1200px;
+  max-height: 270px;
+  margin: 0 auto;
+  width: 100%;
+  cursor: pointer;
+}
+
+#hpto-container .ad-container.hidden {
+  display: none;
+}
+
+#hpto-container .ad-container.interactive {
+  cursor: pointer;
+}
+
+#hpto-container.hpto-closed {
+  height: 0;
+}
+
+.ad-iframe {
+  width: 800px;
+  height: 245px;
+  margin: 0 auto;
+  padding-top: 10px;
+  border: none;
+  display: block;
+  overflow: hidden;
+}
+
+.hpto-button {
+  position: absolute;
+  right: 30px;
+  top: 24px;
+  color: #f6f8ff;
+  background: #29292d;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  padding: 7px 16px 5px;
+  font-size: 9px;
+  text-transform: uppercase;
+  line-height: 9px;
+  letter-spacing: 2px;
+  z-index: 3;
+  border-radius: 10px;
+}
+
+.hpto-button:hover {
+  opacity: 0.8;
+  background-color: #3d3e43;
+  color: #f6f8ff;
+}
+
+.no-hover:hover {
+  opacity: 0.4;
+  background-color: #29292d;
+  cursor: default;
+}
+
+/* For html hptos with bg imgs to align with container bg img */
+.min-width {
+  min-width: 800px;
+}
+
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+.saf-video-takeover {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.saf-video-takeover.will-maximize {
+  transform-origin: -15% 80%;
+  transform: scale(0, 0);
+}
+
+.saf-video-takeover.will-maximize.maximize {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(1, 1);
+}
+
+.saf-video-takeover.will-minimize {
+  transform-origin: -15% 80%;
+  transform: scale(1, 1);
+}
+
+.saf-video-takeover.will-minimize.minimize {
+  transition: transform 0.3s ease-in-out;
+  transform: scale(0, 0);
+}
+
+.saf-video-takeover-min .saf-video-takeover {
+  background: #000;
+}
+
+.saf-video-takeover-max .saf-video-takeover {
+  background: rgba(18, 19, 20, 0.95);
+}
+
+.saf-video-takeover-video video {
+  cursor: pointer;
+}
+
+.saf-video-takeover-min .saf-video-takeover-video video {
+  width: 100%;
+  padding: 0 10px;
+}
+
+@media (max-width: 1000px) {
+  .saf-video-takeover-max .saf-video-takeover-video video {
+    max-width: 540px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1279px) {
+  .saf-video-takeover-max .saf-video-takeover-video video {
+    max-width: 640px;
+    margin: 80px;
+  }
+}
+
+@media (min-width: 1280px) and (max-width: 1899px) {
+  .saf-video-takeover-max .saf-video-takeover-video video {
+    max-width: 854px;
+    margin: 100px;
+  }
+}
+
+@media (min-width: 1900px) {
+  .saf-video-takeover-max .saf-video-takeover-video video {
+    max-width: 1280px;
+    margin: 150px;
+  }
+}
+
+.saf-video-takeover-btn-min,
+.saf-video-takeover-btn-max {
+  display: none;
+  background: none;
+  border: none;
+  color: #ffffff;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.saf-video-takeover-btn-max {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  opacity: 0.3;
+  transition: opacity 0.5s;
+}
+
+.saf-video-takeover-btn-max:hover {
+  opacity: 0.7;
+}
+
+.saf-video-takeover-btn-max:focus {
+  opacity: 0.9;
+}
+
+.saf-video-takeover-max .saf-video-takeover-btn-max {
+  display: block;
+}
+
+html.glue2 #view-video-ad .saf-video-takeover-view {
+  z-index: 1025;
+}
+
+html.glue2 #view-video-ad .saf-video-takeover-btn-max {
+  -webkit-app-region: no-drag;
+}
+
+.saf-video-takeover-btn-min {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.saf-video-takeover-min .saf-video-takeover-btn-min {
+  display: block;
+}
+
+.saf-video-takeover-min:hover .saf-video-takeover-btn-min {
+  opacity: 1;
+}
+
+.bfs-calendar-icon {
+  width: 42px;
+}
+
+.bfs-calendar-month {
+  background-color: #ed1845;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10px;
+  padding: 3px 2px 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.bfs-calendar-day {
+  background-color: #333333;
+  color: #ffffff;
+  font-size: 23px;
+  font-weight: 200;
+  line-height: 23px;
+  padding: 4px 2px 1px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.bfs-concert {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.bfs-concert-date {
+  display: table-cell;
+  width: 42px;
+}
+
+.bfs-concert-info {
+  display: table-cell;
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.bfs-concert-info-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bfs-concert-info-venue {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bfs-container {
+  min-height: 100vh;
+}
+
+.bfs-debug-controls-overlay {
+  position: absolute;
+  top: 48px;
+  right: 0;
+  z-index: 9001;
+}
+
+.bfs-debug-controls-buttons {
+  margin: 32px;
+  text-align: right;
+}
+
+.bfs-debug-controls-button {
+  height: 32px;
+  line-height: 32px;
+  width: 32px;
+}
+
+.bfs-debug-controls-controls {
+  background-color: #181818;
+  border-radius: 8px;
+  margin: 32px;
+  padding: 8px;
+  width: 320px;
+}
+
+.body-container--windows .bfs-debug-controls-controls {
+  border-radius: 0;
+}
+
+.bfs-debug-controls-row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.bfs-debug-controls-col-wrapping {
+  flex-grow: 0;
+  margin: 8px;
+}
+
+.bfs-debug-controls-col-expanding {
+  flex-grow: 1;
+  margin: 8px;
+}
+
+.bfs-debug-controls-no-margin {
+  margin: 0;
+}
+
+.bfs-debug-controls-input {
+  background-color: #333333;
+  border: none;
+  border-radius: 4px;
+  color: #ffffff;
+  outline: none;
+  padding: 4px;
+  text-align: center;
+  width: 64px;
+}
+
+.body-container--windows .bfs-debug-controls-input {
+  border-radius: 0;
+}
+
+.bfs-debug-controls-input[disabled] {
+  cursor: not-allowed;
+}
+
+.bfs-debug-controls-input.invalid {
+  background-color: #cd1a2b;
+}
+
+.app-header {
+  position: relative;
+  z-index: 2;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.hpto-top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  height: 48px;
+  background: #ffffff;
+}
+
+.hpto-container {
+  overflow: hidden;
+  position: relative;
+  margin-top: 48px;
+  z-index: 1;
+}
+
+.bfs-list-group .section-divider.section-divider-borderless {
+  margin-bottom: 4px;
+}
+
+.bfs-list-group .list-group-item.list-group-item-media {
+  height: 50px;
+  line-height: 48px;
+}
+
+.bfs-list-group .list-group-item.list-group-item-media .item-data {
+  padding-left: 15px;
+}
+
+.bfs-tracklist {
+  margin-bottom: 20px;
+}
+
+.bfs-tracklist.summary tr:nth-child(5) td {
+  border-bottom: 1px solid #282828;
+}
+
+.bfs-tracklist.summary tr:nth-child(n+6) {
+  display: none;
+}
+
+.embedded-app-iframe {
+  width: 100%;
+  border: none;
+  overflow: hidden;
+}
+
+.embedded-app-row {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.crsl-inner {
+  font-size: 0;
+}
+
+.crsl-inner .crsl-item {
+  font-size: 14px;
+}
+
+.section-divider-title {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: normal;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: none;
+  margin: 0;
+}
+
+.section-auxiliary a {
+  color: #b3b3b3;
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.015em;
+  font-weight: 200;
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+}
+
+.section-divider-description {
+  clear: both;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  font-weight: 200;
+  color: #b3b3b3;
+  text-transform: none;
+  color: #b3b3b3;
+  font-weight: 200;
+}
+
+.grid-button {
+  margin-bottom: 20px;
+}

@@ -1,0 +1,209 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+.suggest-content {
+  padding: 12px;
+}
+
+.suggest-content--hidden {
+  display: none;
+}
+
+.suggest-item-card {
+  padding: 4px 12px;
+}
+
+.suggest-item-card .card-horizontal-interior-wrapper {
+  background-color: transparent !important;
+}
+
+.suggest-item-link {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  padding: 4px 8px;
+}
+
+.suggest-item-link__title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1 1 auto;
+  margin: 4px;
+}
+
+.suggest-item-link__icon {
+  flex: 0 0 auto;
+  margin: 4px;
+}
+
+.suggest-item {
+  background-color: transparent;
+  cursor: pointer;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+
+.suggest-item--selected {
+  background-color: #333333;
+}
+
+.suggest-scroll-container {
+  background-color: #282828;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.suggest-section:nth-child(1n+2) {
+  margin-top: 16px;
+}
+
+.suggest-section__header {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.015em;
+  font-weight: 200;
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border: none;
+  display: block;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  margin-bottom: 4px;
+}
+
+.suggest-section__header--linked {
+  cursor: pointer;
+}
+
+.suggest-section__header--linked:hover {
+  color: #ffffff;
+}
+
+.suggest-section__items {
+  border: none;
+  display: block;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+.suggest-section__item {
+  border: none;
+  display: block;
+  margin: 0;
+  outline: none;
+  padding: 0;
+}
+
+.suggest-section__item:nth-child(1n+2) {
+  margin-top: 4px;
+}
+
+.suggest-throbber {
+  align-items: center;
+  background-color: #282828;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.suggest-throbber--hidden {
+  display: none;
+}
+
+.suggest-highlight {
+  color: #ffffff;
+}
+
+.suggest-fade {
+  transition: opacity 250ms;
+  opacity: 1;
+}
+
+.suggest-fade--initial {
+  opacity: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  min-width: auto;
+}

@@ -1,0 +1,806 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+/*******************************************************************************
+ * Component: GlueHeader
+ ******************************************************************************/
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+/*******************************************************************************
+ * Public variables
+ ******************************************************************************/
+/*******************************************************************************
+ * Public block, elements and modifiers
+ ******************************************************************************/
+/**
+ * Public block class.
+ *
+ * 1. For positioning elements inside the header
+ */
+.GlueHeader {
+  position: relative;
+  min-height: 208px;
+  /* [1] */
+}
+
+/**
+ * Public element class used for layout and padding, while the content element
+ * is used for animations among other things.
+ *
+ * 1. Found weird rendering issues without this, where content inside of this
+ *    element would be clipped in strange places when resizing the window.
+ */
+.GlueHeader__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+  min-height: 208px;
+  padding-top: 72px;
+  padding-bottom: 16px;
+  contain: paint;
+  /* [1] */
+}
+
+/**
+ * Public element class for the content element. This is used for animations
+ * among other things.
+ */
+.GlueHeader__content {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 166ms cubic-bezier(0.3, 0, 0, 1), transform 166ms cubic-bezier(0.3, 0, 0, 1);
+  transition-delay: 166ms;
+}
+
+/**
+ * Public element class for some of the content. Because of certain layout
+ * requirements, we need two sets of buttons in the regular header and we need
+ * this element to wrap all the content except the secondary set of buttons.
+ */
+.GlueHeader__content-inner {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-top: -10px;
+  margin-bottom: -10px;
+  margin-left: -10px;
+}
+
+/**
+ * Public element class for the custom content.
+ *
+ * 1. Needed to ensure that custom content takes the entire width of the .GlueHeader__content
+ * 2. Prevents the element to grow bigger than we want. It can happen when one of the children
+ *    elements has text that is truncated using white-space: nowrap; overflow: hidden; and
+ *    text-overflow: ellipsis. [https://codepen.io/aj-foster/pen/emBYPW]
+ */
+.GlueHeader__custom-content {
+  flex: 1;
+  /* [1] */
+  min-width: 0;
+  /* [2] */
+}
+
+/**
+ * Public element class for an empty spacer. This is to leave some empty space
+ * in the right side of the header, so the title doesn't go all the way to the
+ * edge.
+ */
+.GlueHeader__spacer {
+  width: 10%;
+}
+
+/**
+ * Public element class for the wrapper around the sticky header. This wrapper
+ * is there to keep the original position and size of the sticky header, so the
+ * scrolling logic can stick and unstick the header at the right position.
+ */
+.GlueHeader__sticky-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+/**
+ * Public element class for the sticky header. This is hidden by default and
+ * will be displayed when scrolling past the top edge of the sticky wrapper.
+ */
+.GlueHeader__sticky {
+  overflow: hidden;
+  opacity: 1;
+}
+
+.GlueHeader__sticky .GlueHeader__image {
+  transition: 100ms cubic-bezier(1, 0, 0.7, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.GlueHeader__sticky .GlueHeader__title {
+  transition: 100ms cubic-bezier(1, 0, 0.7, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.GlueHeader__sticky .GlueHeader__p2s-details {
+  transition: 100ms cubic-bezier(1, 0, 0.7, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.GlueHeader__sticky .GlueHeader__p2s-followers {
+  transition: 100ms cubic-bezier(1, 0, 0.7, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.GlueHeader__sticky .GlueHeader__button:nth-child(1) {
+  transition: 116ms cubic-bezier(1, 0, 0.7, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.GlueHeader__sticky .GlueHeader__button:nth-child(2) {
+  transition: 132ms cubic-bezier(1, 0, 0.7, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.GlueHeader__sticky .GlueHeader__button:nth-child(3) {
+  transition: 148ms cubic-bezier(1, 0, 0.7, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.GlueHeader__sticky .GlueHeader__button:nth-child(4) {
+  transition: 164ms cubic-bezier(1, 0, 0.7, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.GlueHeader__sticky-inner {
+  display: flex;
+  align-items: center;
+  height: 68px;
+  transform: translateY(68px);
+  transition: transform 0ms cubic-bezier(0.3, 0, 0, 1);
+  transition-delay: 166ms;
+}
+
+/**
+ * Public element class for a wrapper around the header background.
+ * This background positions itself fixed to the top of the viewport to enable
+ * certain scrolling behavior.
+ */
+.GlueHeader__background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+/**
+ * Public element class for a colored gradient header background.
+ * This has a default color, but a different color can be set using
+ * `background-color` from JS. There is also a gradient that darkens the color
+ * to have the header background blend into the page background.
+ */
+.GlueHeader__background-color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #606060;
+  background-image: linear-gradient(to bottom, transparent, #181818);
+}
+
+.GlueHeader__background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center center;
+  will-change: transform;
+  contain: paint layout;
+}
+
+/**
+ * Public element class for a background image loader. This is a wrapper element
+ * around the image, to allow for different transformations on the image and the
+ * loader element. The loader element uses an animation while the image element
+ * should follow scroll position precisely without animation.
+ */
+.GlueHeader__background-image-loader {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transform: scale(0.95);
+  will-change: transform;
+}
+
+/**
+ * Public element class for a background image overlay.
+ * This darkens the image a bit, so that we can still display content on top of
+ * it without having even bright colors blending in with the image.
+ */
+.GlueHeader__background-overlay {
+  background: rgba(24, 24, 24, 0.44);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/**
+ * Public element class for a background image overlay with a gradient.
+ * This darkens the image even more in the bottom half part of the header, to
+ * have the header background blend into the page background.
+ */
+.GlueHeader__background-image-overlay-gradient {
+  background: linear-gradient(to bottom, transparent, #181818);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+/**
+ * Public element class for a background overlay that fades in while scrolling.
+ */
+.GlueHeader__background-scroll-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #121212;
+  opacity: 0;
+  will-change: opacity;
+  contain: paint layout;
+  pointer-events: none;
+}
+
+/**
+ * Public element class for a background overlay that fades in while scrolling,
+ * but with an elliptical shape to darken the edges faster than the center
+ * point of the header. Useful for headers with an image background. The actual
+ * ellipse is not specified here in CSS, since it's added from JS and the
+ * parameters for the ellipse change while scrolling.
+ */
+.GlueHeader__background-scroll-overlay-ellipse {
+  position: absolute;
+  top: -100px;
+  right: 0;
+  bottom: -100px;
+  left: 0;
+  background-image: radial-gradient(circle farthest-corner, transparent, #121212 50%);
+  opacity: 0;
+  will-change: opacity;
+  contain: paint layout;
+  pointer-events: none;
+}
+
+/**
+ * Public element class for a background overlay that fades in while scrolling,
+ * that is placed behind the ellipse overlay. This will make sure the background
+ * ends up at a solid color, but still keeping the ellipse effect.
+ */
+.GlueHeader__background-scroll-overlay-ellipse-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #121212;
+  opacity: 0;
+  will-change: opacity;
+  contain: paint layout;
+  pointer-events: none;
+}
+
+/**
+ * This element class is defined further up, but we need this here to nest
+ * other selectors inside of it, because the same content has different styles
+ * depending on if it's in the regular header or the sticky header.
+ * This is for the regular header.
+ */
+.GlueHeader__content {
+  /**
+   * Public element class for a wrapper around all the content except the image.
+   */
+}
+
+.GlueHeader__content .GlueHeader__data {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  overflow: hidden;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  margin-bottom: -10px;
+  margin-left: -10px;
+}
+
+.GlueHeader__content .GlueHeader__title {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: none;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  margin-left: -0.07em;
+}
+
+@media (max-width: 819px) {
+  .GlueHeader__content {
+    display: flex;
+    flex-direction: column;
+    /**
+     * Public element class for the title in narrow window.
+     */
+  }
+  .GlueHeader__content .GlueHeader__title {
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: -0.005em;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: none;
+  }
+}
+
+/**
+ * This element class is defined further up, but we need this here to nest
+ * other selectors inside of it, because the same content has different styles
+ * depending on if it's in the regular header or the sticky header.
+ * This is for the sticky header.
+ */
+.GlueHeader__sticky {
+  /**
+   * Public element class for the title.
+   */
+}
+
+.GlueHeader__sticky .GlueHeader__title {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+  flex: 1;
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__background-scroll-overlay-ellipse {
+  background: #121212;
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__content {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 166ms cubic-bezier(1, 0, 0.7, 1), transform 166ms cubic-bezier(1, 0, 0.7, 1);
+  transition-delay: 0ms;
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky {
+  pointer-events: auto;
+  opacity: 1;
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__image {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 166ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__title {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 166ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__p2s-details {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 166ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__p2s-followers {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 166ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__button:nth-child(1) {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 199ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__button:nth-child(2) {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 232ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__button:nth-child(3) {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 265ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__button:nth-child(4) {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 298ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__sticky-inner {
+  transform: translateY(0);
+  transition: none;
+}
+
+.GlueHeader--with-active-sticky-header .GlueHeader__background {
+  border-bottom: 1px solid #282828;
+}
+
+/**
+ * Public modifier class for a header that is in a fast scrolling mode.
+ * When scrolling fast, most animations should be disabled to not cause a laggy
+ * effect of animations being slower than the scroll speed. We make an exception
+ * for the sticky header when it appears and items in the sticky header fade in
+ * since that doesn't feel laggy.
+ */
+.GlueHeader--with-fast-scrolling.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__image {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-fast-scrolling.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__title {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-fast-scrolling.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__p2s-details {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-fast-scrolling.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__p2s-followers {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 0ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-fast-scrolling.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__button:nth-child(1) {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 33ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-fast-scrolling.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__button:nth-child(2) {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 66ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-fast-scrolling.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__button:nth-child(3) {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 99ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-fast-scrolling.GlueHeader--with-active-sticky-header .GlueHeader__sticky .GlueHeader__button:nth-child(4) {
+  transition: 266ms cubic-bezier(0.3, 0, 0, 1) 132ms;
+  transition-property: transform, opacity;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.GlueHeader--with-fast-scrolling:not(.GlueHeader--with-active-sticky-header) .GlueHeader__image,
+.GlueHeader--with-fast-scrolling:not(.GlueHeader--with-active-sticky-header) .GlueHeader__title,
+.GlueHeader--with-fast-scrolling:not(.GlueHeader--with-active-sticky-header) .GlueHeader__button {
+  transition: none !important;
+}
+
+.GlueHeader--with-fast-scrolling .GlueHeader__content,
+.GlueHeader--with-fast-scrolling .GlueHeader__sticky-inner,
+.GlueHeader--with-fast-scrolling .facepile-list-container,
+.GlueHeader--with-fast-scrolling .GlueHeader__sponsorship {
+  transition: none !important;
+}
+
+/**
+ * Public modifier class for a background image that has just been loaded.
+ */
+.GlueHeader__background-image-loader--with-loading-animation {
+  transition: opacity 900ms cubic-bezier(0.3, 0, 0, 1), transform 900ms cubic-bezier(0.3, 0, 0, 1);
+}
+
+/**
+ * Public modifier class for a background image that has been loaded.
+ */
+.GlueHeader__background-image-loader--is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.App__header {
+  position: relative;
+  z-index: 2;
+}
+
+.App__content {
+  position: relative;
+  z-index: 1;
+}
+
+.CardList__list {
+  padding: 0;
+  list-style: none;
+  margin-bottom: 0;
+}
+
+.Carousel__inner {
+  padding: 0;
+}
+
+.TopResultsSection__section-divider {
+  display: flex;
+  height: 48px;
+  margin-bottom: 16px;
+}
+
+.TopResultsSection__section-title {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: normal;
+  flex: 1;
+  align-self: flex-end;
+  margin: 0;
+}
+
+.TopResultsSection__section-auxiliary {
+  align-self: flex-end;
+  margin: 0;
+}
+
+@media (min-width: 820px) {
+  .TopResultsSection__section-auxiliary {
+    display: none;
+  }
+}
+
+.AllResults,
+.AllResults__row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Header__title {
+  color: #b3b3b3;
+}
+
+.Header__title--highlight {
+  color: #ffffff;
+}
+
+.TrackList__throbber {
+  margin: 10px auto;
+}
+
+.Throbber {
+  height: 300px;
+  position: relative;
+}
+
+.EmptyView {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px 0;
+  position: relative;
+  text-align: center;
+}
+
+.EmptyView--full {
+  position: fixed;
+  padding: 0;
+  top: 32px;
+  bottom: 32px;
+  right: 32px;
+  left: 32px;
+}
+
+.EmptyView__icon {
+  line-height: 64px;
+}
+
+.EmptyView__text {
+  max-width: 400px;
+}

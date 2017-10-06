@@ -1,0 +1,400 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+.station-creator-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  pointer-events: none;
+  z-index: 999 !important;
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.6, 0, 0.7, 1);
+}
+
+.station-creator-overlay.active {
+  pointer-events: auto;
+  opacity: 0.5;
+}
+
+.station-creator-box {
+  position: fixed;
+  background-color: #181818;
+  width: 258px;
+  top: 48px;
+  left: 100%;
+  height: 100%;
+  z-index: 1000 !important;
+  transition: none 0.3s cubic-bezier(0.3, 0, 0.4, 1);
+  transition-property: transform;
+}
+
+.station-creator-box.active {
+  transform: translateX(-258px);
+}
+
+.station-creator-box .list-group-item.list-group-item-media.more {
+  border-bottom: 2px solid transparent !important;
+  margin-bottom: 0 !important;
+}
+
+.station-creator-box .selectable {
+  user-select: none;
+  color: #ffffff !important;
+  background-color: transparent !important;
+  margin-bottom: 2px;
+  height: auto;
+  position: relative;
+  transition: background-color ease-in-out 100ms;
+}
+
+.station-creator-box .selectable:hover {
+  background-color: #4d4d4d !important;
+}
+
+.station-creator-box .selectable > a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 0 !important;
+  z-index: 1;
+}
+
+.station-creator-box .selectable:last-child {
+  margin-bottom: 0 !important;
+}
+
+.station-creator-box .selectable.selected {
+  background-color: #4d4d4d !important;
+}
+
+.station-creator-box .selectable.selected .label {
+  color: #bababa !important;
+  border-color: #666666 !important;
+}
+
+.station-creator-box .selectable.selected:hover {
+  cursor: pointer;
+}
+
+.station-creator-box div:focus {
+  outline: none;
+}
+
+.station-creator-box .input-container {
+  position: relative;
+  background-color: #404040;
+  height: 70px;
+  width: 100%;
+  padding-top: 20px;
+}
+
+.station-creator-box .input-container .spoticon-search-16 {
+  position: absolute;
+  top: 25px;
+  left: 30px;
+  color: #a0a0a0;
+  z-index: 2;
+}
+
+.station-creator-box .input-container .spoticon-search-16 ::before {
+  content: "\f140";
+  font-size: 16px;
+}
+
+.station-creator-box .input-container input {
+  background-color: #181818;
+  color: #b3b3b3;
+  border: 0;
+  padding: 6px 22px 6px 34px;
+  margin: 0 auto;
+  width: 84%;
+}
+
+.station-creator-box .input-container .clear-input {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: #b3b3b3;
+  width: 16px;
+  height: 16px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.station-creator-box .input-container .clear-input::before {
+  font-size: 11px;
+}
+
+.station-creator-box .results-container {
+  overflow-x: hidden;
+  overflow-y: auto;
+  text-shadow: initial;
+  z-index: 30 !important;
+  text-align: left;
+  width: 100%;
+  color: #ffffff;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding-bottom: 20px;
+  background-color: #181818;
+}
+
+.station-creator-box .results-container .result-category {
+  padding: 0;
+  width: 258px;
+  margin: 0;
+  position: relative;
+}
+
+.station-creator-box .results-container .result-category .category-header {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #a0a0a0 !important;
+  margin-top: 21px;
+  margin-bottom: 6px;
+}
+
+.station-creator-box .results-container .result-category .category-header,
+.station-creator-box .results-container .result-category .results {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.station-creator-box .results-container .result-category .category-header {
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.station-creator-box .results-container .result-category .card-horizontal-interior-wrapper {
+  padding: 4px 12px;
+}
+
+.disabled-scroll-bar {
+  padding-right: 16px;
+  overflow-y: hidden;
+}
+
+.disabled-scroll-bar .station-creator-box {
+  left: calc(100% - 16px);
+}
+
+.scrollbar-style-overlay.disabled-scroll-bar {
+  padding-right: 0;
+}
+
+.scrollbar-style-overlay.disabled-scroll-bar .station-creator-box {
+  left: 100%;
+}
+
+.app-header {
+  position: relative;
+  z-index: 2;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+  padding-top: 15px;
+}
+
+.offline .error-and-offline {
+  display: block;
+}
+
+.offline .error-and-offline .offline-content {
+  display: block;
+}
+
+.media-objects-container {
+  overflow: auto;
+}
+
+.single-media-object {
+  width: 300px;
+}
+
+.about-info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.my-loader {
+  margin-top: 20px;
+}
+
+.empty-content {
+  background-image: url(/images/emptystate_background.jpg);
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #121315;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  padding-top: 2em;
+}
+
+.empty-content .empty-container {
+  display: table;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.empty-content .empty-container .message {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.empty-content .empty-container .message .action-button {
+  padding-top: 10px;
+}
+
+.stations-list {
+  display: flex;
+  flex-wrap: wrap;
+}

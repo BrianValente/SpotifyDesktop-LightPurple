@@ -1,0 +1,411 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+.account-info {
+  margin-top: 32px;
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-info__profile {
+  display: flex;
+  overflow: hidden;
+}
+
+.account-info__profile-image {
+  flex-basis: 64px;
+  width: 64px;
+  height: 64px;
+  margin-right: 24px;
+}
+
+.account-info__profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.account-info__profile-info-name {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: normal;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: none;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.account-info__profile-info-product {
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.015em;
+  font-weight: 200;
+  color: #b3b3b3;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-top: 4px;
+}
+
+.account-info__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-left: 16px;
+}
+
+html,
+body {
+  min-height: 100%;
+  width: 100%;
+  -webkit-user-select: none;
+  background: #181818;
+}
+
+.app-header {
+  position: relative;
+  z-index: 2;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+  will-change: transform;
+}
+
+.loading-screen {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background-color: #181818;
+}
+
+.loading-screen .throbber {
+  margin: auto;
+  position: initial;
+}
+
+#prelogin-title {
+  margin-top: 90px;
+}
+
+.avatar {
+  height: 120px;
+  width: 120px;
+  margin: 0 auto;
+}
+
+#settings .action-button {
+  padding-top: 10px;
+}
+
+#local-files .button,
+#advanced-settings .button {
+  margin-bottom: 13px;
+}
+
+.setting-row {
+  color: #a0a0a0;
+}
+
+.setting-row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.setting-row.active .col.action a {
+  color: #1db954;
+}
+
+.setting-row.active small {
+  display: block;
+}
+
+#settings.is-incognito .setting-row.incognito-state, .setting-row.disabled {
+  color: #404040;
+}
+
+#settings.is-incognito .setting-row.incognito-state .col.action a, .setting-row.disabled .col.action a {
+  color: #333333;
+}
+
+#settings.is-incognito .setting-row.incognito-state .col.action a:hover, .setting-row.disabled .col.action a:hover {
+  cursor: default;
+}
+
+#settings.is-incognito .setting-row.incognito-state .btn-info, .setting-row.disabled .btn-info {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.65;
+}
+
+#settings.is-incognito .setting-row.incognito-state .btn-info:hover, #settings.is-incognito .setting-row.incognito-state .btn-info:focus, #settings.is-incognito .setting-row.incognito-state .btn-info:active, #settings.is-incognito .setting-row.incognito-state .btn-info.active, .setting-row.disabled .btn-info:hover, .setting-row.disabled .btn-info:focus, .setting-row.disabled .btn-info:active, .setting-row.disabled .btn-info.active {
+  opacity: 0.5;
+}
+
+.setting-row #facebook-description .avatar {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  float: left;
+}
+
+.setting-row #facebook-description span {
+  line-height: 30px;
+  margin-left: 10px;
+  float: left;
+}
+
+.setting-row small {
+  display: none;
+  color: #a0a0a0;
+}
+
+.setting-row .col {
+  padding: 15px 0;
+  vertical-align: middle;
+}
+
+.setting-row .col.description {
+  float: left;
+  padding-right: 15px;
+  cursor: default;
+}
+
+.setting-row .col.action {
+  float: right;
+  text-align: right;
+}
+
+.setting-row .col.action input[type=checkbox] {
+  float: right;
+}
+
+.btn-group li {
+  text-align: left;
+}
+
+#footer {
+  margin-top: 40px;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.form-group input {
+  display: inline-block;
+  width: auto;
+  padding: 5px;
+  color: #ffffff;
+  border: 0;
+  background-color: #333333;
+}
+
+.form-group input::-webkit-input-placeholder {
+  color: #a0a0a0;
+}
+
+.form-group input:focus {
+  color: #ffffff;
+  outline: 0;
+  border-color: #404040;
+  background-color: #404040;
+}
+
+.form-group input[name=host], .form-group input[name=username], .form-group input[name=password] {
+  width: 200px;
+}
+
+.form-group input[name=port] {
+  width: 70px;
+}
+
+.form-group input[disabled] {
+  color: #a0a0a0;
+  background-color: #282828;
+}
+
+.form-group input.error {
+  border: 1px solid #cd1a2b;
+}
+
+select {
+  min-width: 200px;
+  background: #333333;
+  color: #ffffff;
+  border: 0;
+  height: 24px;
+}
+
+section .left {
+  position: relative;
+  float: left;
+}
+
+section .right {
+  position: relative;
+  float: right;
+}
+
+section#social .state .col.user {
+  float: left;
+}
+
+section#social .user-input {
+  padding-top: 0;
+}
+
+section#playback .col.crossfade {
+  display: block;
+  position: relative;
+  float: left;
+  transition: opacity 0.2s;
+}
+
+section#playback .col.crossfade.disabled {
+  opacity: 0;
+}
+
+/**
+ * $TODO - abstract to GLUE
+ */
+.slider-range {
+  display: inline-block;
+  position: relative;
+  width: 300px;
+  outline: none;
+  user-select: none;
+  background: transparent;
+}
+
+.slider-range.disabled.track {
+  background: #282828;
+}
+
+.slider-range.disabled .applied {
+  background: #a0a0a0;
+}
+
+.slider-range .container {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
+.slider-range .container .progress-bar-wrapper {
+  display: inline-block;
+  position: relative;
+  width: 230px;
+}
+
+.slider-range .container .progress-bar-wrapper .handle {
+  display: block;
+  position: relative;
+  left: -5px;
+}
+
+.slider-range .container .duration {
+  display: inline-block;
+  position: relative;
+  margin-left: 15px;
+  cursor: default;
+}
+
+section#apps .button {
+  margin: 8px 12px 8px 0;
+}
+
+html.prelogin {
+  -webkit-app-region: drag;
+}
+
+html.prelogin #wrapper {
+  -webkit-app-region: no-drag;
+}
+
+#settings.is-incognito .incognito-state .slider {
+  background: #333333;
+  border-color: transparent;
+  pointer-events: none;
+}
+
+#settings.is-incognito .incognito-state .slider div {
+  background: #404040;
+  box-shadow: none;
+}

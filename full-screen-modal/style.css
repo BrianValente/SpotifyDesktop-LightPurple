@@ -1,0 +1,958 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+.context-menu-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.context-menu {
+  padding: 8px 0;
+  position: absolute;
+  display: none;
+  width: auto;
+  min-width: 160px;
+  max-width: 350px;
+  color: #b3b3b3;
+  background-color: #282828;
+  box-shadow: 0 4px 12px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.body-container--windows .context-menu {
+  border-radius: 0;
+}
+
+.context-menu .item {
+  padding: 7px 34px;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: default;
+  line-height: 18px;
+}
+
+.context-menu .sep {
+  display: block;
+  margin: 4px 0;
+  height: 1px;
+  background-color: #404040;
+}
+
+.context-menu .item.disabled {
+  opacity: 0.4;
+}
+
+.context-menu .filter-search {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 0;
+  width: 0;
+  opacity: 0;
+}
+
+.context-menu .filter-search input:focus {
+  outline: 0;
+}
+
+.context-menu .item.with-icon {
+  padding-left: 12px;
+}
+
+.context-menu .item.with-icon::before {
+  padding-right: 6px;
+}
+
+.context-menu .item.with-icon-svg::before {
+  content: '';
+  background-image: var(--svg-icon);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  vertical-align: top;
+  position: relative;
+  top: 1px;
+}
+
+.context-menu .item span {
+  pointer-events: none;
+}
+
+.context-menu .item.secondary {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.context-menu .item.secondary .text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.context-menu .item.secondary .secondary {
+  margin-left: 20px;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+}
+
+.context-menu .filtered {
+  display: none;
+}
+
+.context-menu .item .highlight {
+  background-color: #4687d6;
+  color: #ffffff;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+.context-menu .item.parent::after {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f110";
+  display: block;
+  position: absolute;
+  right: 24px;
+  top: 8px;
+  width: 0;
+  height: 0;
+}
+
+.context-menu .item.hover:not(.disabled) {
+  background-color: #404040;
+  color: #ffffff;
+  cursor: default;
+}
+
+.context-menu .item.active {
+  background-color: #404040;
+  color: #ffffff;
+}
+
+.context-menu .item:last-child {
+  border: 0;
+}
+
+/**
+ * Variables used to control positioning.
+ */
+/**
+ * Global styles & overrides.
+ */
+html,
+body,
+#main {
+  background: transparent;
+  height: 100%;
+  overflow-y: hidden;
+}
+
+.full-screen-modal {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.full-screen-modal__close {
+  position: absolute;
+  right: 0;
+  padding: 8vh 6vw;
+  z-index: 1;
+}
+
+.full-screen-modal__close:hover {
+  color: #ffffff;
+}
+
+.full-screen-modal--container {
+  z-index: 1;
+  height: 100%;
+}
+
+.full-screen-modal--container .main-header {
+  padding: 8vh 6vw;
+}
+
+.full-screen-modal--container::after {
+  content: "";
+  display: block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+  background: rgba(18, 18, 18, 0.7);
+}
+
+.full-screen-modal--container > div {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  content: ' ';
+  left: 0;
+  right: 0;
+}
+
+.full-screen-modal--container > div:not(.modal-backdrop--hidden) {
+  background-color: rgba(24, 24, 24, 0.8);
+}
+
+/**
+ * Our modal component styles.
+ */
+.image-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.image-carousel .crsl-inner {
+  transform: translateZ(0);
+}
+
+.image-carousel .image-wrapper {
+  max-width: 100vw;
+  max-height: 100vh;
+  display: block;
+  padding: 12vh 12vw;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.image-carousel img {
+  max-width: 76vw;
+  max-height: 76vh;
+  display: block;
+  margin: 0 auto;
+}
+
+.image-carousel-item {
+  width: 100%;
+  float: none;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100vh;
+}
+
+.image-carousel__close {
+  position: absolute;
+  right: 0;
+  padding: 8vh 6vw;
+  z-index: 1;
+}
+
+.image-carousel__close:hover {
+  color: #ffffff;
+}
+
+.image-carousel__count {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 14px;
+  color: #b3b3b3;
+  font-weight: 400;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 12vh;
+  margin: 0;
+  line-height: 12vh;
+}
+
+.image-carousel__count .current-slide {
+  color: #ffffff;
+}
+
+.image-carousel--prev,
+.image-carousel--next {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  transform: translateY(-50%);
+  margin: 0 6vw;
+}
+
+.image-carousel--next {
+  right: 0;
+}
+
+@keyframes fade-in-error {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.full-screen-modal--edit-header-image .full-screen-modal__close {
+  display: none;
+}
+
+.app-header {
+  position: relative;
+  z-index: 2;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+}
+
+.edit-header-image--pending {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 100;
+}
+
+.edit-header-image--error {
+  color: #fceaeb;
+  position: absolute;
+  z-index: 30;
+  margin: 0;
+  left: 0;
+  right: 0;
+  background: rgba(205, 26, 43, 0.7);
+  padding: 1em;
+  width: 100%;
+  opacity: 0;
+  animation: fade-in-error 0.5s forwards;
+}
+
+.edit-header-image--error-dismiss {
+  float: right;
+}
+
+.edit-header-image--retry {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: none;
+  position: relative;
+  top: 35%;
+  text-align: center;
+}
+
+.edit-header-image--container {
+  padding: 0;
+  max-width: 1490px;
+  height: 100%;
+  margin: 0 auto;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: relative;
+  background: black url(/img/guidelines-bg.png) no-repeat bottom left;
+  background-size: 100vh;
+  background-attachment: local;
+}
+
+.edit-header-image--container input[type="file"] {
+  cursor: pointer;
+  -webkit-appearance: none;
+  position: absolute;
+  top: -999em;
+  left: 0;
+  width: 0;
+  opacity: 0;
+  z-index: 1;
+}
+
+.edit-header-image--info {
+  width: 575px;
+  padding: 0 0 1em 5vw;
+  text-align: left;
+}
+
+.header-image--placeholder {
+  position: relative;
+  margin: 0;
+}
+
+.header-image--placeholder:first-child {
+  margin-left: 0;
+}
+
+.header-image--placeholder:last-child {
+  margin-right: 0;
+}
+
+.header-image--placeholder h2 {
+  font-size: 1em;
+  opacity: 0.3;
+}
+
+.header-image--placeholder input[type="range"].slider {
+  width: 320px;
+  position: absolute;
+  top: 295px;
+  left: 50%;
+  margin-left: -160px;
+}
+
+.header-image--overlay {
+  position: absolute;
+  z-index: 15;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  margin: 0;
+  display: table;
+  text-align: center;
+  background-color: rgba(70, 135, 214, 0.2);
+}
+
+.header-image--controls {
+  position: absolute;
+  z-index: 20;
+  top: 10px;
+  right: 0;
+  text-align: right;
+}
+
+.header-image--controls .button {
+  margin-left: 12px;
+}
+
+.content-table {
+  display: table;
+  width: 100%;
+  height: 60vh;
+  padding: 2em 0 0;
+}
+
+.content-table > div {
+  display: table-cell;
+  vertical-align: top;
+  text-align: center;
+}
+
+.content-table > div:first-child {
+  width: 445px;
+}
+
+.content-table > div:last-child {
+  text-align: left;
+  vertical-align: top;
+  overflow: hidden;
+}
+
+.placeholder--container {
+  position: relative;
+}
+
+.placeholder-desktop {
+  height: 320px;
+  overflow: hidden;
+}
+
+.placeholder-desktop::after {
+  content: "";
+  position: absolute;
+  display: block;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 320px;
+  height: 44px;
+  margin-top: -44px;
+  background: rgba(24, 24, 24, 0.7);
+}
+
+.placeholder-desktop .header-image--overlay {
+  top: -125px;
+}
+
+.placeholder-desktop .image-canvas--container {
+  position: relative;
+  width: 100%;
+}
+
+.placeholder-mobile {
+  margin: 2em 100px 0 0;
+  width: 380px;
+  height: 401px;
+  padding-left: 22px;
+  padding-top: 81px;
+}
+
+.placeholder-mobile::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 320px;
+  height: 653px;
+  background: url(/img/iphone.png) no-repeat top center;
+  background-size: 320px;
+}
+
+.placeholder-mobile .header-image--overlay {
+  left: 22px;
+  top: 81px;
+  width: 276px;
+  height: 492px;
+}
+
+.placeholder-mobile .header-image--overlay .placeholder--label {
+  top: -125px;
+}
+
+.placeholder-avatar {
+  text-align: center;
+  margin: 0;
+  z-index: 50;
+  position: absolute;
+  left: 20px;
+  top: 125px;
+}
+
+.placeholder-avatar .image-canvas--container {
+  display: inline-block;
+}
+
+.placeholder-avatar .header-image--overlay {
+  left: 50%;
+  margin-left: -65px;
+}
+
+.placeholder-avatar input[type="range"].slider {
+  width: 130px;
+  margin-left: -65px;
+  display: block;
+  top: 170px;
+}
+
+.placeholder--label {
+  cursor: pointer;
+  transition: opacity 0.2s ease-in-out;
+  text-align: center;
+  line-height: 1;
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.placeholder--label::before {
+  display: block;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.info--heading {
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.005em;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: none;
+}
+
+.info--heading::before {
+  content: "";
+  display: block;
+  background: url(/img/guidelines-img.png) no-repeat top center;
+  background-size: contain;
+  height: 23vh;
+  width: 450px;
+}
+
+.info--content {
+  max-width: 445px;
+}
+
+.bold-text {
+  font-weight: bold;
+  color: white;
+}
+
+.edit-header-image--container {
+  max-width: initial;
+  background-color: #181818;
+}
+
+.edit-header-image--info {
+  padding-left: 4vw;
+}
+
+.glue-page-header__content-wrapper {
+  pointer-events: none;
+  position: relative;
+  padding-top: 0;
+}
+
+.glue-page-header__content {
+  height: 100%;
+}
+
+.glue-page-header__content .placeholder-avatar {
+  top: initial;
+  bottom: 60px;
+}
+
+.glue-page-header__content .header-image--overlay {
+  background: transparent;
+  height: calc(100% - 44px);
+}
+
+.glue-page-header__content .header-image--placeholder,
+.glue-page-header__content .header-image--overlay {
+  pointer-events: auto;
+}
+
+.glue-page-header__content .image-canvas--container {
+  display: block;
+}
+
+.header-image-default-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(70, 135, 214, 0.2);
+  z-index: 10;
+}
+
+.placeholder-avatar:not(.placeholder-avatar--with-image)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 50%;
+  background-color: rgba(70, 135, 214, 0.2);
+}
+
+.header-slider {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: auto;
+}
+
+.header-slider input[type=range].slider {
+  width: 20%;
+}
+
+.header-image-drag-instruction {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.8);
+  opacity: 1;
+  transition: opacity 0.2s cubic-bezier(0.3, 0, 0, 1);
+}
+
+.header-image-drag-instruction--is-panning {
+  opacity: 0;
+  transition-timing-function: cubic-bezier(1, 0, 0.7, 1);
+}
+
+.header-buttons {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.header-buttons button {
+  margin-left: 12px;
+  pointer-events: auto;
+}
+
+/**
+ * Slider implementation. This currently does not exist in `glue`,
+ * but we should definitely upstream this somehow.
+ */
+input[type=range].slider {
+  position: relative;
+  z-index: 20;
+  -webkit-appearance: none;
+  /* Hides the slider so that custom slider can be made */
+  width: 100%;
+  background: #404040;
+  border: none;
+  border-radius: 2px;
+  height: 4px;
+}
+
+input[type=range].slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: #fff;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+  display: block;
+  height: 12px;
+  width: 12px;
+}
+
+input[type=range].slider:focus {
+  outline: none;
+  /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+.tooltip--container {
+  position: absolute;
+  z-index: 30;
+  width: 240px;
+  padding: 1.5em;
+  margin-left: 15px;
+  background: #4687d6;
+  color: #ffffff;
+  transition: opacity 0.2s ease-in;
+}
+
+.tooltip--container::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  margin-top: -15px;
+  border-color: transparent #4687d6 transparent transparent;
+  border-width: 15px 15px 15px 0;
+  border-style: solid;
+}
+
+.tooltip--title {
+  margin: 0;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: normal;
+  line-height: 3;
+}
+
+.tooltip--text {
+  font-weight: 100;
+}
+
+#context-menu {
+  margin-top: 15px;
+}
+
+#context-menu::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  margin-left: -15px;
+  border-color: transparent transparent #333333 transparent;
+  border-width: 0 15px 15px 15px;
+  border-style: solid;
+}
+
+.image-canvas--container {
+  position: relative;
+}
+
+.image-canvas--container::after {
+  content: attr(data-tooltip);
+  font-size: 0.9em;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: move;
+  text-align: center;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  top: 50%;
+  margin-top: -0.5em;
+  width: 100%;
+  opacity: 1;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.image-canvas--container.image-canvas--panning::after {
+  opacity: 0;
+}
+
+.image-canvas--container.image-canvas--disabled::after {
+  display: none;
+}
+
+.image-canvas--canvas {
+  z-index: 10;
+  position: relative;
+  cursor: move;
+  display: block;
+}
+
+.image-canvas--disabled .image-canvas--canvas {
+  cursor: default;
+}
+
+.image-canvas--outline {
+  position: absolute;
+  border: 1px dashed rgba(255, 255, 255, 0.75);
+  transition: opacity 0.2s ease-in-out;
+}

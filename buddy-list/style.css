@@ -1,0 +1,997 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+.surround {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 0 16px;
+}
+
+.surround .row {
+  position: relative;
+  z-index: 0;
+}
+
+.cross-fade-leave {
+  opacity: 1;
+}
+
+.cross-fade-leave-active {
+  opacity: 0;
+}
+
+.cross-fade-enter {
+  opacity: 0;
+}
+
+.cross-fade-enter-active {
+  opacity: 1;
+}
+
+.cross-fade-height,
+.cross-fade-leave-active,
+.cross-fade-enter-active {
+  transition: none 0.3s cubic-bezier(0.3, 0, 0.4, 1);
+  transition-property: opacity, height;
+}
+
+.more-like-this-playlist .container {
+  padding: 0;
+}
+
+.more-like-this-playlist .section-divider {
+  display: flex;
+}
+
+.more-like-this-playlist .section-divider h2 {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.more-like-this-playlist .container .row {
+  margin: 0;
+}
+
+.more-like-this-playlist .container .row .crsl-item {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.more-like-this-playlist .container .row .crsl-item .crsl-item:first-child {
+  padding-right: 4px;
+}
+
+.more-like-this-playlist .container .row .crsl-item .crsl-item:last-child {
+  padding-left: 4px;
+}
+
+.quest-based-education-app {
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.quest-based-education-app .circular-progress-bar {
+  margin: 20px auto 5px;
+  display: block;
+  width: 70px;
+}
+
+.quest-based-education-app .tasklist {
+  margin-top: 20px;
+}
+
+.quest-based-education-app .quest-complete-screen {
+  text-align: center;
+}
+
+.quest-based-education-app .task {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  font-weight: 200;
+  color: #ffffff;
+  text-transform: none;
+  cursor: pointer;
+  display: flex;
+  flex-flow: row;
+}
+
+.quest-based-education-app.quest-v2 .task {
+  margin-bottom: 15px;
+}
+
+.quest-based-education-app.quest-v2 .task .task-icon {
+  padding-right: 18px;
+  color: #a0a0a0;
+}
+
+.quest-based-education-app.quest-v2 .task .task-icon::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f10a";
+  font-size: 16px;
+  line-height: inherit;
+}
+
+.quest-based-education-app.quest-v2 .task .task-title {
+  border-bottom: 1px solid transparent;
+}
+
+.quest-based-education-app.quest-v2 .task .task-title:hover > span {
+  border-bottom: 1px solid currentcolor;
+}
+
+.quest-based-education-app.quest-v2 .task.task-done .task-title {
+  color: #a0a0a0;
+  text-decoration: line-through;
+}
+
+.quest-based-education-app.quest-v2 .task.task-done .task-title:hover > span {
+  border-bottom: 1px solid transparent;
+}
+
+.quest-based-education-app.quest-v2 .task.task-done .task-icon {
+  color: #1db954;
+}
+
+.quest-based-education-app.quest-v3 .task {
+  color: #ffffff;
+}
+
+.quest-based-education-app.quest-v3 .task .task-indicator {
+  flex: 0 0 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.quest-based-education-app.quest-v3 .task:hover .task-icon {
+  border-color: #ffffff;
+}
+
+.quest-based-education-app.quest-v3 .task .task-icon {
+  border: 1px solid #333333;
+  border-radius: 3px;
+  height: 20px;
+  width: 20px;
+}
+
+.quest-based-education-app.quest-v3 .task .task-title {
+  border-bottom: 1px solid #282828;
+  flex: 1;
+  padding: 12px 0;
+}
+
+.quest-based-education-app.quest-v3 .task .task-title:hover > span {
+  border-bottom: 1px solid currentcolor;
+}
+
+.quest-based-education-app.quest-v3 .task.task-done .task-title {
+  color: #1ed760;
+}
+
+.quest-based-education-app.quest-v3 .task.task-done .task-title:hover > span {
+  border-bottom: 1px solid transparent;
+}
+
+.quest-based-education-app.quest-v3 .task.task-done .task-icon {
+  border-color: #1ed760;
+  background-color: #1ed760;
+  color: #ffffff;
+}
+
+.quest-based-education-app.quest-v3 .task.task-done .task-icon::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f10a";
+  font-size: 12px;
+  line-height: inherit;
+}
+
+.quest-based-education-app.quest-v3 .task.task-done .task-icon::before {
+  margin-left: 3px;
+}
+
+.quest-based-education-app .greeting .greeting-title {
+  font-size: 28px;
+  line-height: 36px;
+  letter-spacing: -0.005em;
+  font-weight: normal;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 10px;
+  overflow-wrap: break-word;
+}
+
+.quest-based-education-app .greeting .greeting-subtitle {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: normal;
+  font-weight: 200;
+  text-align: center;
+  color: #a0a0a0;
+  margin-bottom: 30px;
+}
+
+.quest-based-education-app .circular-progress-bar-trail {
+  fill-opacity: 0;
+  stroke: #404040;
+}
+
+.quest-based-education-app .circular-progress-bar-progress {
+  fill-opacity: 0;
+  stroke: #1ed760;
+  stroke-linecap: butt;
+  transition: stroke-dashoffset 0.5s ease 0s;
+}
+
+.quest-based-education-app .circular-progress-bar-text {
+  fill: #ffffff;
+  dominant-baseline: middle;
+  text-anchor: middle;
+  font-size: 1.8em;
+}
+
+.refreshed-playlist {
+  margin-bottom: 16px;
+}
+
+.refreshed-playlist .section-divider-sticky-wrapper {
+  position: sticky;
+  top: 0;
+  height: auto;
+  min-height: 40px;
+}
+
+.refreshed-playlist__tracklist {
+  position: relative;
+}
+
+.refreshed-playlist__tracklist::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(to bottom, transparent 0%, transparent 40%, #121212 100%);
+  content: '';
+  pointer-events: none;
+}
+
+.refreshed-playlist__create-button {
+  text-align: center;
+}
+
+.EmptyFriendFeed__cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  min-height: 220px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.EmptyFriendFeed__cta--bg-1 {
+  background-image: url("../img/empty-friend-feed-top-1.svg");
+}
+
+.EmptyFriendFeed__cta--bg-2 {
+  background-image: url("../img/empty-friend-feed-top-2.svg");
+}
+
+.EmptyFriendFeed__cta--bg-3 {
+  background-image: url("../img/empty-friend-feed-top-3.svg");
+}
+
+.EmptyFriendFeed__button {
+  margin-top: 24px;
+}
+
+/**
+ * 1. The height of our placeholder image
+ */
+.EmptyFriendFeed__placeholder {
+  min-height: 958px;
+  /* [1] */
+  background: url("../img/empty-friend-feed-placeholder.png") top center no-repeat;
+  background-size: 240px 958px;
+}
+
+/**
+ * 1. Prevents the element to grow bigger than we want.
+ */
+body {
+  background: #fafafa;
+  font-size: 12px;
+  min-width: 0;
+  /* [1] */
+  border-left: solid 1px #eeeeee;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.section-divider-sticky-wrapper {
+  position: relative;
+  z-index: 2;
+  height: 40px;
+  margin-bottom: 16px;
+}
+
+.section-divider-sticky-wrapper .section-divider {
+  background-color: #fafafa;
+  padding-top: 10px;
+  padding-bottom: 12px;
+}
+
+.section-divider-section-content,
+.cards-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.buddy-list-title {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.buddy-list-title .section-divider-sticky-wrapper {
+  margin-bottom: 0;
+}
+
+.error-wrapper {
+  height: 300px;
+}
+
+.error-content {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.cards-wrapper {
+  position: relative;
+}
+
+.card-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  transition: transform 0.7s cubic-bezier(0, 0, 0.05, 1), opacity 0.7s cubic-bezier(0, 0, 0.05, 1);
+}
+
+.card-wrapper.card-enter {
+  opacity: 0;
+}
+
+.card-wrapper.card-enter-active {
+  opacity: 1;
+  z-index: 0 !important;
+}
+
+.card-wrapper.card-leave {
+  opacity: 1;
+}
+
+.card-wrapper.card-leave-active {
+  opacity: 0;
+  z-index: 0 !important;
+}
+
+.buddy-card {
+  overflow: hidden;
+  padding: 18px 16px;
+  /* background-color: #ffffff; */
+  display: flex;
+}
+
+.context-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.friend:hover .user-play-button .card-image-wrapper .card-button-play,
+.friend:hover .user-play-button .card-image-wrapper .card-overlay,
+.friend.contextmenu-active .user-play-button .card-image-wrapper .card-button-play,
+.friend.contextmenu-active .user-play-button .card-image-wrapper .card-overlay {
+  visibility: visible;
+}
+
+.friend .user {
+  margin-top: 11px;
+  margin-bottom: 3px;
+}
+
+.friend .user.has-context {
+  margin-top: 0;
+}
+
+.friend .user-image.has-context {
+  margin-top: 20px;
+}
+
+.friend .user .name {
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.015em;
+  font-weight: 200;
+  color: #000000;
+  text-transform: none;
+  color: #000000;
+}
+
+.friend .user-image {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 13px;
+}
+
+.friend .song-title {
+  line-height: 14px;
+}
+
+.friend .context {
+  margin-top: 2px;
+}
+
+.friend .status-containers {
+  float: right;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+.friend .active-indicator,
+.friend .from-now {
+  margin-left: 5px;
+  overflow: hidden;
+}
+
+.friend .user-play-button {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Always show a user placeholder, since we're pretending the card is a user
+    with a different context */
+}
+
+.friend .user-play-button .card-button-play {
+  width: 100%;
+  height: 100%;
+}
+
+.friend .user-play-button .card-image,
+.friend .user-play-button .card-image-hit-area,
+.friend .user-play-button .card-overlay,
+.friend .user-play-button .card-placeholder-wrapper {
+  /* force all context-types to appear rounded, since we pretend
+      that they are playable users */
+  border-radius: 500px;
+}
+
+.friend .user-play-button .card-image-wrapper {
+  overflow: visible;
+}
+
+.friend .user-play-button .card-placeholder-wrapper .album-placeholder,
+.friend .user-play-button .card-placeholder-wrapper .artist-placeholder,
+.friend .user-play-button .card-placeholder-wrapper .playlist-placeholder,
+.friend .user-play-button .card-placeholder-wrapper .playlist-folder-placeholder,
+.friend .user-play-button .card-placeholder-wrapper .genre-placeholder {
+  display: none;
+}
+
+.friend .user-play-button .card-placeholder-wrapper .user-placeholder {
+  display: block;
+}
+
+.friend .user-play-button .card-button-play {
+  height: 40px;
+  line-height: 38px;
+  padding-top: 1px;
+  padding-left: 40px;
+  padding-right: 40px;
+  border-radius: 20px;
+  background: rgba(24, 24, 24, 0.7);
+  color: #ffffff;
+  transition: none 33ms cubic-bezier(0.3, 0, 0.7, 1);
+  transition-property: transform, box-shadow, color, background-color;
+  box-shadow: inset 0 0 0 1px #b3b3b3;
+  width: 40px;
+  padding-left: 0;
+  padding-right: 0;
+  margin: -20px 0 0 -20px;
+}
+
+.friend .user-play-button .card-button-play .b-alt-text {
+  margin-top: -38px;
+}
+
+.friend .user-play-button .card-button-play.contextmenu-active, .friend .user-play-button .card-button-play:not(:disabled):hover {
+  background-color: rgba(24, 24, 24, 0.7);
+}
+
+.friend .user-play-button .card-button-play:not(:disabled):hover:active {
+  background: rgba(24, 24, 24, 0.7);
+  color: #a0a0a0;
+  transform: scale(1);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .friend .user-play-button .card-button-play:not(:disabled):hover:active {
+    transform: scale(1);
+  }
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .friend .user-play-button .card-button-play {
+    transition-duration: 50ms;
+  }
+}
+
+.friend .user-play-button .card-button-play::after {
+  transition: none 33ms cubic-bezier(0.3, 0, 0.7, 1);
+  transition-property: box-shadow;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .friend .user-play-button .card-button-play::after {
+    transition-duration: 50ms;
+  }
+}
+
+.friend .user-play-button .card-button-play.contextmenu-active, .friend .user-play-button .card-button-play:not(:disabled):hover {
+  transition: none 33ms cubic-bezier(0.3, 0, 0, 1);
+  transition-property: transform, box-shadow, color, background-color;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .friend .user-play-button .card-button-play.contextmenu-active, .friend .user-play-button .card-button-play:not(:disabled):hover {
+    transition-duration: 66ms;
+  }
+}
+
+.friend .user-play-button .card-button-play.contextmenu-active::after, .friend .user-play-button .card-button-play:not(:disabled):hover::after {
+  transition: none 33ms cubic-bezier(0.3, 0, 0, 1);
+  transition-property: box-shadow;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .friend .user-play-button .card-button-play.contextmenu-active::after, .friend .user-play-button .card-button-play:not(:disabled):hover::after {
+    transition-duration: 66ms;
+  }
+}
+
+.friend .user-play-button .card-button-play:not(:disabled):hover:active {
+  transition: none;
+}
+
+.friend .user-play-button .card-button-play:not(:disabled):hover:active::after {
+  transition: none;
+}
+
+.friend .user-play-button .card-button-play::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 500px;
+  box-shadow: inset 0 0 0 1px #b3b3b3;
+}
+
+.friend .user-play-button .card-button-play.contextmenu-active, .friend .user-play-button .card-button-play:not(:disabled):hover {
+  box-shadow: inset 0 0 0 1px #ffffff, 0 0 0 1px transparent;
+}
+
+.friend .user-play-button .card-button-play.contextmenu-active::after, .friend .user-play-button .card-button-play:not(:disabled):hover::after {
+  box-shadow: inset 0 0 0 1px #ffffff;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .friend .user-play-button .card-button-play.contextmenu-active, .friend .user-play-button .card-button-play:not(:disabled):hover {
+    box-shadow: inset 0 0 0 1px #ffffff;
+  }
+  .friend .user-play-button .card-button-play.contextmenu-active::after, .friend .user-play-button .card-button-play:not(:disabled):hover::after {
+    box-shadow: inset 0 0 0 1px #ffffff;
+  }
+}
+
+.friend .user-play-button .card-button-play:not(:disabled):hover:active {
+  box-shadow: inset 0 0 0 1px #535353;
+}
+
+.friend .user-play-button .card-button-play:not(:disabled):hover:active::after {
+  box-shadow: inset 0 0 0 1px #535353;
+}
+
+.friend .user-play-button .card-button-play.contextmenu-active, .friend .user-play-button .card-button-play:not(:disabled):hover {
+  transform: scale(1.1);
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .friend .user-play-button .card-button-play.contextmenu-active, .friend .user-play-button .card-button-play:not(:disabled):hover {
+    transform: scale(1.1);
+  }
+}
+
+.friend .user-play-button .card-button-play::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: left;
+  border-radius: 500px;
+  line-height: 40px;
+  font-size: 20px;
+  padding-left: 10px;
+  width: calc(100% - 10px);
+}
+
+.friend .user-play-button .card-button-play.button-play::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f132";
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.friend .user-play-button .card-button-play.button-play.playing:not(:hover),
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover),
+.card.playing .friend .user-play-button .card-button-play.button-play:not(:hover) {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.friend .user-play-button .card-button-play.button-play.playing:not(:hover)::after,
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover)::after,
+.card.playing .friend .user-play-button .card-button-play.button-play:not(:hover)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 500px;
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.friend .user-play-button .card-button-play.button-play.playing:not(:hover).contextmenu-active, .friend .user-play-button .card-button-play.button-play.playing:not(:hover):not(:disabled):hover,
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active,
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover,
+.card.playing .friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active,
+.card.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover {
+  box-shadow: inset 0 0 0 1px transparent, 0 0 0 1px transparent;
+}
+
+.friend .user-play-button .card-button-play.button-play.playing:not(:hover).contextmenu-active::after, .friend .user-play-button .card-button-play.button-play.playing:not(:hover):not(:disabled):hover::after,
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active::after,
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover::after,
+.card.playing .friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active::after,
+.card.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover::after {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .friend .user-play-button .card-button-play.button-play.playing:not(:hover).contextmenu-active, .friend .user-play-button .card-button-play.button-play.playing:not(:hover):not(:disabled):hover,
+  .tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active,
+  .tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover,
+  .card.playing .friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active,
+  .card.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover {
+    box-shadow: inset 0 0 0 1px transparent;
+  }
+  .friend .user-play-button .card-button-play.button-play.playing:not(:hover).contextmenu-active::after, .friend .user-play-button .card-button-play.button-play.playing:not(:hover):not(:disabled):hover::after,
+  .tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active::after,
+  .tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover::after,
+  .card.playing .friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active::after,
+  .card.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover::after {
+    box-shadow: inset 0 0 0 1px transparent;
+  }
+}
+
+.friend .user-play-button .card-button-play.button-play.playing:not(:hover):not(:disabled):hover:active,
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover:active,
+.card.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover:active {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.friend .user-play-button .card-button-play.button-play.playing:not(:hover):not(:disabled):hover:active::after,
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover:active::after,
+.card.playing .friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover:active::after {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.friend .user-play-button .card-button-play.button-play.playing:not(:hover)::before,
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:not(:hover)::before,
+.card.playing .friend .user-play-button .card-button-play.button-play:not(:hover)::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f15e";
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.friend .user-play-button .card-button-play.button-play.playing:hover::before,
+.tl-row.playing .friend .user-play-button .card-button-play.button-play:hover::before,
+.card.playing .friend .user-play-button .card-button-play.button-play:hover::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f130";
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover), .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover) {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover)::after, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 500px;
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active, .tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover {
+  box-shadow: inset 0 0 0 1px transparent, 0 0 0 1px transparent;
+}
+
+.tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active::after, .tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover::after, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active::after, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover::after {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2) {
+  .tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active, .tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover {
+    box-shadow: inset 0 0 0 1px transparent;
+  }
+  .tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active::after, .tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover::after, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover).contextmenu-active::after, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover::after {
+    box-shadow: inset 0 0 0 1px transparent;
+  }
+}
+
+.tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover:active, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover:active {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover:active::after, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover):not(:disabled):hover:active::after {
+  box-shadow: inset 0 0 0 1px transparent;
+}
+
+.tl-row.playing.friend .user-play-button .card-button-play.button-play:not(:hover)::before, .card.playing.friend .user-play-button .card-button-play.button-play:not(:hover)::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f15e";
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.tl-row.playing.friend .user-play-button .card-button-play.button-play:hover::before, .card.playing.friend .user-play-button .card-button-play.button-play:hover::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f130";
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.friend .user-play-button .playing .button-play.card-button-play {
+  visibility: visible;
+}
+
+.friend .user-play-button .playing .button-play.card-button-play:not(:hover)::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f15e";
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.friend .user-play-button .playing .button-play.card-button-play:hover::before {
+  font-family: "glue-spoticon";
+  font-style: normal;
+  font-weight: normal;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  line-height: inherit;
+  vertical-align: bottom;
+  content: "\f130";
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.buddy-card.inactive-friends-divider {
+  padding: 0;
+}
+
+.buddy-card.inactive-friends-divider .section-divider {
+  width: 100%;
+  padding: 19px 0 0;
+  margin: 0 16px;
+  border-bottom: none;
+  border-top: 1px solid #222326;
+}
+
+.buddy-card.inactive-friends-divider .section-divider > * {
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: normal;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: none;
+}
+
+@keyframes pulse0 {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse1 {
+  0% {
+    transform: translateY(-100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.active-indicator {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.active-indicator-wave {
+  position: absolute;
+  transform: translateY(-100px);
+  left: 0;
+  animation: pulse0 0.8s steps(3, start) 5;
+}
+
+.active-indicator.animation-1 .active-indicator-wave {
+  animation-name: pulse1;
+}
+
+.active-indicator-wave-1 {
+  animation-delay: 0.53333s;
+  transform: translateY(0);
+}
+
+.active-indicator-wave-2 {
+  animation-delay: 0.26667s;
+}
+
+.find-friends-button-container {
+  padding: 34px 0;
+  text-align: center;
+  display: block;
+}

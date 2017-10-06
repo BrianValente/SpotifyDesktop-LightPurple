@@ -1,0 +1,258 @@
+/**
+ * Spoticons
+ *
+ * Variable Set: Spoticons
+ *
+ * Styleguide 1.2.1
+ */
+/**
+ * Common color usages
+ *
+ * These colors are provided because they might be needed in many places where
+ * they should be synced up.
+ */
+/**
+ * Vertical Grid System
+ * --------------------
+ *
+ * We try to adhere to a baseline grid, which is a vertical grid with lines
+ * every X pixels. The baseline of text should always fall on this line.
+ */
+/**
+ * Horizontal Grid System
+ * ----------------------
+ *
+ * This grid system is responsive in four sizes, where all sizes use a 12 column
+ * grid.
+ *
+ * Since the values are calculated, you need to compile the Less code to see the
+ * values. From glue, run `node tools/output-grid-values.js` to see
+ * the values.
+ *
+ * Here's a reference for what to use the variables for:
+ *
+ * Min Width (including scroll bar)
+ * --------------------------------
+ * Including scroll bar:  $glue-screen-min
+ * Excluding scroll bar:  $glue-body-width-min
+ *
+ * Max Width (of content, space on the sides)
+ * ------------------------------------------
+ * Including scroll bar:  $glue-screen-max
+ * Excluding scroll bar:  $glue-body-width-max
+ *
+ * Page Gutter (gutter on the sides of the page)
+ * ---------------------------------------------
+ * Size:                  $glue-grid-page-gutter
+ *
+ * Extra Small (xs)
+ * ----------------
+ * Gutter size:           $glue-grid-column-gutter-xs
+ * View width range:      $glue-screen-min to $glue-screen-xs-max
+ *
+ * Small (sm)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-sm
+ * View width range:      $glue-screen-sm-min to $glue-screen-sm-max
+ *
+ * Medium (md)
+ * -----------
+ * Gutter size:           $glue-grid-column-gutter-md
+ * View width range:      $glue-screen-md-min to $glue-screen-md-max
+ *
+ * Large (lg)
+ * ----------
+ * Gutter size:           $glue-grid-column-gutter-lg
+ * View width range:      $glue-screen-lg-min to $glue-screen-lg-max
+ */
+.throbberWrapper {
+  position: fixed;
+  top: 59px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #181818;
+  z-index: 999;
+}
+
+.throbberWrapper .throbber-large {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -35px;
+  margin-top: -35px;
+}
+
+.throbberLoader {
+  height: 60px;
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #181818;
+  opacity: 0.8;
+}
+
+.throbberLoader .throbber {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 10px !important;
+}
+
+.app-header {
+  position: relative;
+  z-index: 2;
+}
+
+.app-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================================================
+  QUERY STRING
+  ========================================================================== */
+.s-query-string {
+  color: #a0a0a0;
+}
+
+.s-query-string__highlight {
+  color: #ffffff;
+}
+
+/* ==========================================================================
+  HEADER
+  ========================================================================== */
+.s-header {
+  padding: 0 !important;
+  position: relative;
+}
+
+.s-header.rows-1 {
+  height: 220px !important;
+  margin-bottom: 25px;
+}
+
+.s-header.rows-2 {
+  height: 440px !important;
+  margin-bottom: 25px;
+}
+
+.s-header .pod {
+  position: absolute;
+}
+
+.s-header .title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* ==========================================================================
+  GLUE OVERRIDES
+  ========================================================================== */
+.disable-link {
+  pointer-events: none !important;
+  cursor: default !important;
+  color: #404040 !important;
+}
+
+.s-header .card-button-add,
+.s-header .card-button-more {
+  display: none !important;
+}
+
+@media screen and (max-width: 700px) {
+  .card-button-add,
+  .card-button-more {
+    display: none !important;
+  }
+}
+
+.s-header .card {
+  width: 100px !important;
+}
+
+.grid {
+  margin: 0 !important;
+  overflow: hidden;
+}
+
+.grid li {
+  display: block;
+  float: left;
+}
+
+.s-header .card-info-subtitle-metadata,
+.s-header .card-type-playlist .card-info-subtitle-links {
+  display: none;
+}
+
+.alert {
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+  QUERY BAR
+  ========================================================================== */
+.s-query div {
+  height: 59px;
+  line-height: 59px;
+  border-bottom: 1px solid #282828;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.s-query div h3 {
+  display: inline !important;
+  margin: 0 !important;
+}
+
+/* ==========================================================================
+  NO RESULTS
+  ========================================================================== */
+html.full-height,
+html.full-height > body,
+html.full-height > body > .container {
+  height: 100%;
+  max-width: none !important;
+}
+
+/**
+ * We need to reset the positioning of app-content
+ * when in full-height to allow content within to
+ * fill the screen
+ */
+.full-height .app-content {
+  position: initial;
+}
+
+.no-result {
+  margin: 100px auto 0;
+  text-align: center;
+}
+
+.no-result p {
+  line-height: 1.3 !important;
+  word-wrap: break-word;
+}
+
+.no-result i {
+  display: block;
+  line-height: 1.5;
+  color: #404040;
+  text-align: center;
+}
+
+.no-result i::before {
+  font-size: 112px;
+}
