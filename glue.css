@@ -5463,6 +5463,7 @@ body,
 .spoticon-search-16::before {
   content: "\f140";
   font-size: 16px;
+  color: #666666;
 }
 
 .spoticon-search-24::before {
@@ -11645,8 +11646,8 @@ label {
 
 input[type="search"] {
   box-sizing: border-box;
-  background-color: #666666;
-  color: white;
+  background-color: rgba(220,220,220,.5);
+  color: #000000;
 }
 
 input[type="radio"],
@@ -19058,11 +19059,11 @@ html:lang(th) .glue-page-header__sticky .glue-page-header__title {
 }
 
 .h-search-wrapper:hover::before {
-  color: #ffffff;
+  color: #000000;
 }
 
 .h-search-wrapper:hover .h-search::-webkit-input-placeholder {
-  color: #ffffff;
+  color: #000000;
 }
 
 .h-search {
@@ -19071,7 +19072,7 @@ html:lang(th) .glue-page-header__sticky .glue-page-header__title {
   background: transparent;
   border: 0;
   border-radius: 3px;
-  color: #ffffff;
+  color: #000000;
   display: block;
   outline: 0;
   padding-bottom: 0;
@@ -19080,7 +19081,7 @@ html:lang(th) .glue-page-header__sticky .glue-page-header__title {
 }
 
 .focus .h-search, .h-search:focus {
-  background: #404040;
+  background: #f0f0f0;
 }
 
 .h-search-close {

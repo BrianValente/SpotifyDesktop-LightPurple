@@ -1308,7 +1308,7 @@ html.glue2 #view-video-ad .saf-video-takeover-btn-max {
 
 .SearchInput__clearButton {
   pointer-events: auto;
-  color: #a0a0a0;
+  color: #000000;
   flex-basis: 16px;
 }
 
