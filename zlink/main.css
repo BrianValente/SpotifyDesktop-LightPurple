@@ -1,32 +1,3 @@
-.billboard-ad .billboard-wrapper {
-    width: 600px;
-}
-
-#leaderboard-ad-element {
-    margin: 8px auto;
-}
-
-.saf-video-takeover-max .saf-video-takeover-video video {
-    max-width: 1280px;
-    margin: 150px;
-}
-
-.zlink-app-header {
-    height: 40px;
-}
-
-.profile-menu-wrapper .profile .username {
-    max-width: 110px;
-}
-
-.accessibility-links {
-    margin: 0 24px 0 24px;
-}
-
-.upgrade-button {
-    display: flex;
-}
-
 .SearchInput {
     color: #fff;
 }
@@ -42,14 +13,6 @@
 .browser-navigation-top-bar .button {
     color: #000;
     text-shadow: 1px 1px rgba(255,255,255,.3);
-}
-
-.capping-full-screen-message .cfsm-close-btn.button-play.playing:not(:hover).contextmenu-active, .capping-full-screen-message .cfsm-close-btn.button-play.playing:not(:hover):not(:disabled):hover, .tl-row.playing .capping-full-screen-message .cfsm-close-btn.button-play:not(:hover).contextmenu-active, .tl-row.playing .capping-full-screen-message .cfsm-close-btn.button-play:not(:hover):not(:disabled):hover, .card.playing .capping-full-screen-message .cfsm-close-btn.button-play:not(:hover).contextmenu-active, .card.playing .capping-full-screen-message .cfsm-close-btn.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
-}
-
-.tl-row.playing.capping-full-screen-message .cfsm-close-btn.button-play:not(:hover).contextmenu-active, .tl-row.playing.capping-full-screen-message .cfsm-close-btn.button-play:not(:hover):not(:disabled):hover, .card.playing.capping-full-screen-message .cfsm-close-btn.button-play:not(:hover).contextmenu-active, .card.playing.capping-full-screen-message .cfsm-close-btn.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
 }
 
 .capping-full-screen-message .cfsm-close-btn.active {
@@ -90,18 +53,6 @@
 
 .sidebar .sidebar-navbar.sidebar-scroll-element .item.active::after {
     border-right: 4px solid #7f1ec6;
-}
-
-.sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.contextmenu-active, .sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator:not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px #fff;
-}
-
-.sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play.playing:not(:hover).contextmenu-active, .sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play.playing:not(:hover):not(:disabled):hover, .tl-row.playing .sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play:not(:hover).contextmenu-active, .tl-row.playing .sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play:not(:hover):not(:disabled):hover, .card.playing .sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play:not(:hover).contextmenu-active, .card.playing .sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
-}
-
-.tl-row.playing.sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play:not(:hover).contextmenu-active, .tl-row.playing.sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play:not(:hover):not(:disabled):hover, .card.playing.sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play:not(:hover).contextmenu-active, .card.playing.sidebar .sidebar-navbar.sidebar-scroll-element .item .playing-indicator.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
 }
 
 .sidebar .sidebar-navbar.sidebar-scroll-element .item.offline.complete .offline-indicator {
@@ -162,18 +113,6 @@
     border-bottom: 10px solid #7f1ec6;
 }
 
-body.remotebar .view-player {
-    height: 93px;
-}
-
-body.remotebar .view-player #connect-picker #connect-container {
-    bottom: 92px;
-}
-
-body.remotebar .view-player #connect-picker #connect-container.remote {
-    bottom: 88px;
-}
-
 body.remotebar .view-player .player-bar-wrapper {
     height: calc(100% - 20px);
 }
@@ -189,15 +128,6 @@ body.remotebar .view-player .player-bar-wrapper {
 .view-player {
     background: #fafafa;
     border-top: 1px solid #eee;
-    height: 72px;
-}
-
-.view-player .now-playing-container .caption .cover-image-link {
-    flex-basis: 48px;
-}
-
-.view-player .player-controls-container .progress-container {
-    margin-top: 3px;
 }
 
 .view-player .player-controls-container .progress-container .elapsed, .view-player .player-controls-container .progress-container .remaining {
@@ -208,31 +138,12 @@ body.remotebar .view-player .player-bar-wrapper {
     background-color: #7f1ec6;
 }
 
-.view-player .now-playing .cover-image-link-wrapper {
-    flex: 0 1 60px;
-    height: 48px;
-}
-
-.view-player .now-playing .cover-image-link {
-    height: 48px;
-    width: 48px;
-}
-
-.view-player .now-playing .cover-image-link figure {
-    height: 48px;
-    width: 48px;
-}
-
 .view-player .player-controls-container .progress-container .progress-bar .inner {
     background-color: #7f1ec6;
 }
 
 .view-player .player-controls-container .progress-container.progress-bar-enabled:hover .progress-bar .inner, .view-player .player-controls-container .progress-container.progress-bar-enabled.dragging-progress-bar .progress-bar .inner {
     background-color: #7f1ec6;
-}
-
-.view-player .player-controls-container .controls {
-    margin-top: 2px;
 }
 
 .view-player .player-controls-container .controls .button-play {
@@ -249,16 +160,8 @@ body.remotebar .view-player .player-bar-wrapper {
     color: #000;
 }
 
-.view-player .player-controls-container .controls .button-play.button-play.playing:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .button-play.button-play.playing:not(:hover):not(:disabled):hover, .tl-row.playing .view-player .player-controls-container .controls .button-play.button-play:not(:hover).contextmenu-active, .tl-row.playing .view-player .player-controls-container .controls .button-play.button-play:not(:hover):not(:disabled):hover, .card.playing .view-player .player-controls-container .controls .button-play.button-play:not(:hover).contextmenu-active, .card.playing .view-player .player-controls-container .controls .button-play.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
-}
-
-.tl-row.playing.view-player .player-controls-container .controls .button-play.button-play:not(:hover).contextmenu-active, .tl-row.playing.view-player .player-controls-container .controls .button-play.button-play:not(:hover):not(:disabled):hover, .card.playing.view-player .player-controls-container .controls .button-play.button-play:not(:hover).contextmenu-active, .card.playing.view-player .player-controls-container .controls .button-play.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
-}
-
 .view-player .player-controls-container .controls .button-play.button-play.playing:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .button-play.button-play.playing:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px #b3b3b3;
+    box-shadow: inset 0 0 0 1px #666;
 }
 
 .view-player .player-controls-container .controls .previous, .view-player .player-controls-container .controls .next {
@@ -267,10 +170,6 @@ body.remotebar .view-player .player-bar-wrapper {
 
 .view-player .player-controls-container .controls .previous.contextmenu-active, .view-player .player-controls-container .controls .previous:not(:disabled):hover, .view-player .player-controls-container .controls .next.contextmenu-active, .view-player .player-controls-container .controls .next:not(:disabled):hover {
     color: #000;
-}
-
-.tl-row.playing.view-player .player-controls-container .controls .previous.button-play:not(:hover).contextmenu-active, .tl-row.playing.view-player .player-controls-container .controls .previous.button-play:not(:hover):not(:disabled):hover, .view-player .player-controls-container .controls .next.button-play:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .next.button-play:not(:hover):not(:disabled):hover, .card.playing.view-player .player-controls-container .controls .previous.button-play:not(:hover).contextmenu-active, .card.playing.view-player .player-controls-container .controls .previous.button-play:not(:hover):not(:disabled):hover, .view-player .player-controls-container .controls .next.button-play:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .next.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
 }
 
 .view-player .player-controls-container .controls .previous.active, .view-player .player-controls-container .controls .next.active {
@@ -287,10 +186,6 @@ body.remotebar .view-player .player-bar-wrapper {
 
 .view-player .player-controls-container .controls .button-shuffle.contextmenu-active, .view-player .player-controls-container .controls .button-shuffle:not(:disabled):hover, .view-player .player-controls-container .controls .button-repeat.contextmenu-active, .view-player .player-controls-container .controls .button-repeat:not(:disabled):hover, .view-player .player-controls-container .controls .button-thumbs-down.contextmenu-active, .view-player .player-controls-container .controls .button-thumbs-down:not(:disabled):hover, .view-player .player-controls-container .controls .button-thumbs-up.contextmenu-active, .view-player .player-controls-container .controls .button-thumbs-up:not(:disabled):hover {
     color: #000;
-}
-
-.tl-row.playing.view-player .player-controls-container .controls .button-shuffle.button-play:not(:hover).contextmenu-active, .tl-row.playing.view-player .player-controls-container .controls .button-shuffle.button-play:not(:hover):not(:disabled):hover, .view-player .player-controls-container .controls .button-repeat.button-play:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .button-repeat.button-play:not(:hover):not(:disabled):hover, .view-player .player-controls-container .controls .button-thumbs-down.button-play:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .button-thumbs-down.button-play:not(:hover):not(:disabled):hover, .view-player .player-controls-container .controls .button-thumbs-up.button-play:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .button-thumbs-up.button-play:not(:hover):not(:disabled):hover, .card.playing.view-player .player-controls-container .controls .button-shuffle.button-play:not(:hover).contextmenu-active, .card.playing.view-player .player-controls-container .controls .button-shuffle.button-play:not(:hover):not(:disabled):hover, .view-player .player-controls-container .controls .button-repeat.button-play:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .button-repeat.button-play:not(:hover):not(:disabled):hover, .view-player .player-controls-container .controls .button-thumbs-down.button-play:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .button-thumbs-down.button-play:not(:hover):not(:disabled):hover, .view-player .player-controls-container .controls .button-thumbs-up.button-play:not(:hover).contextmenu-active, .view-player .player-controls-container .controls .button-thumbs-up.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
 }
 
 .view-player .player-controls-container .controls .button-shuffle.active, .view-player .player-controls-container .controls .button-repeat.active, .view-player .player-controls-container .controls .button-thumbs-down.active, .view-player .player-controls-container .controls .button-thumbs-up.active {
@@ -323,15 +218,10 @@ body.remotebar .view-player .player-bar-wrapper {
 
 .view-player .extra-controls-container .button-lyrics, .view-player .extra-controls-container .button-queue, .view-player .extra-controls-container .button-subtitles, .view-player .extra-controls-container .button-devices {
     color: #666;
-    margin-right: 8px;
 }
 
 .view-player .extra-controls-container .button-lyrics.contextmenu-active, .view-player .extra-controls-container .button-lyrics:not(:disabled):hover, .view-player .extra-controls-container .button-queue.contextmenu-active, .view-player .extra-controls-container .button-queue:not(:disabled):hover, .view-player .extra-controls-container .button-subtitles.contextmenu-active, .view-player .extra-controls-container .button-subtitles:not(:disabled):hover, .view-player .extra-controls-container .button-devices.contextmenu-active, .view-player .extra-controls-container .button-devices:not(:disabled):hover {
     color: #000;
-}
-
-.tl-row.playing.view-player .extra-controls-container .button-lyrics.button-play:not(:hover).contextmenu-active, .tl-row.playing.view-player .extra-controls-container .button-lyrics.button-play:not(:hover):not(:disabled):hover, .view-player .extra-controls-container .button-queue.button-play:not(:hover).contextmenu-active, .view-player .extra-controls-container .button-queue.button-play:not(:hover):not(:disabled):hover, .view-player .extra-controls-container .button-subtitles.button-play:not(:hover).contextmenu-active, .view-player .extra-controls-container .button-subtitles.button-play:not(:hover):not(:disabled):hover, .view-player .extra-controls-container .button-devices.button-play:not(:hover).contextmenu-active, .view-player .extra-controls-container .button-devices.button-play:not(:hover):not(:disabled):hover, .card.playing.view-player .extra-controls-container .button-lyrics.button-play:not(:hover).contextmenu-active, .card.playing.view-player .extra-controls-container .button-lyrics.button-play:not(:hover):not(:disabled):hover, .view-player .extra-controls-container .button-queue.button-play:not(:hover).contextmenu-active, .view-player .extra-controls-container .button-queue.button-play:not(:hover):not(:disabled):hover, .view-player .extra-controls-container .button-subtitles.button-play:not(:hover).contextmenu-active, .view-player .extra-controls-container .button-subtitles.button-play:not(:hover):not(:disabled):hover, .view-player .extra-controls-container .button-devices.button-play:not(:hover).contextmenu-active, .view-player .extra-controls-container .button-devices.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
 }
 
 .view-player .extra-controls-container .button-lyrics.active, .view-player .extra-controls-container .button-queue.active, .view-player .extra-controls-container .button-subtitles.active, .view-player .extra-controls-container .button-devices.active {
@@ -348,14 +238,6 @@ body.remotebar .view-player .player-bar-wrapper {
 
 .view-player .extra-controls-container .volumebar-container .progress-bar-wrapper.active .inner, .view-player .extra-controls-container .volumebar-container .progress-bar-wrapper:hover .inner {
     background: #7f1ec6;
-}
-
-.view-player .extra-controls-container .button-fullscreen {
-    margin-left: 8px;
-}
-
-.view-player .image-expanded .now-playing-text-spacer {
-    flex-basis: 12px;
 }
 
 .view-player .text-container .text-item-container .text-item .scroll-text-container::before {
@@ -402,22 +284,6 @@ body.remotebar .view-player .player-bar-wrapper {
     stroke: #9a37e1;
 }
 
-#churned-locked-state .message-highlight {
-    font-size: .89em;
-}
-
-#churned-locked-state .message-title {
-    font-size: 3em;
-}
-
-#churned-locked-state .message-description {
-    font-size: 1em;
-}
-
-#churned-locked-state .message-cancel-sub {
-    font-size: 1em;
-}
-
 #churned-locked-state .cancel-sub {
     color: #9a37e1;
 }
@@ -430,24 +296,8 @@ body.remotebar .view-player .player-bar-wrapper {
     background-image: linear-gradient(to bottom,#fff,transparent 18px);
 }
 
-.video-player {
-    height: calc(100% - 72px);
-}
-
 .video-button.contextmenu-active, .video-button:not(:disabled):hover {
     box-shadow: inset 0 0 0 1px #fff;
-}
-
-.video-button::after {
-    box-shadow: none;
-}
-
-.video-button.button-play.playing:not(:hover).contextmenu-active, .video-button.button-play.playing:not(:hover):not(:disabled):hover, .tl-row.playing .video-button.button-play:not(:hover).contextmenu-active, .tl-row.playing .video-button.button-play:not(:hover):not(:disabled):hover, .card.playing .video-button.button-play:not(:hover).contextmenu-active, .card.playing .video-button.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
-}
-
-.tl-row.playing.video-button.button-play:not(:hover).contextmenu-active, .tl-row.playing.video-button.button-play:not(:hover):not(:disabled):hover, .card.playing.video-button.button-play:not(:hover).contextmenu-active, .card.playing.video-button.button-play:not(:hover):not(:disabled):hover {
-    box-shadow: inset 0 0 0 1px transparent;
 }
 
 .GlueButton--with-green-fill {

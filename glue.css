@@ -792,7 +792,8 @@ th[data-sort]:hover {
 }
 
 .glue-page-header__content .glue-page-header__title,
-.glue-page-header__sticky .glue-page-header__title {
+.glue-page-header__sticky .glue-page-header__title,
+.glue-page-header__content .glue-page-header__label {
     color: black !important;
 }
 
@@ -802,4 +803,30 @@ th[data-sort]:hover {
 
 .tl-header th {
     border-top-color: transparent;
+}
+
+.glue-page-header__content .glue-page-header__count-label-text {
+    color: #666666;
+}
+
+.glue-page-header__content .glue-page-header__count-label-link:hover .glue-page-header__count-label-text {
+    color: black;
+}
+
+.glue-page-header--with-active-sticky-header .glue-page-header__background-scroll-overlay-ellipse,
+.glue-page-header__background-scroll-overlay-ellipse-backdrop {
+    background: white;
+}
+
+.glue-page-header__background-image-overlay-gradient {
+    background: linear-gradient(to bottom, transparent, #ffffff);
+}
+
+
+
+
+
+/* Browse section genre blocks text color */
+.gc-label-text {
+    color: white;
 }
