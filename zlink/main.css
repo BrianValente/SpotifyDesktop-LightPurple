@@ -368,12 +368,17 @@ body.remotebar .view-player .player-bar-wrapper {
     color: #9a37e1;
 }
 
-html, body {
+html {
+    background-color: transparent;
+}
+
+body,
+iframe {
     background-color: #fafafa;
 }
 
-iframe {
-    background-color: #fafafa;
+#view-content {
+    background-color: white;
 }
 
 #menu-wrapper {
