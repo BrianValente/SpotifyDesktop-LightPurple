@@ -544,7 +544,8 @@ a.list-group-item.active {
     color: #7f1ec6;
 }
 
-.card-info-title {
+.card-info-title,
+.card-horizontal .card-info-title {
     color: #000;
 }
 
@@ -824,6 +825,11 @@ th[data-sort]:hover {
 }
 
 
+
+
+.glue-page-header__content .glue-page-header__count-label-number {
+	color: #666666;
+}
 
 
 
