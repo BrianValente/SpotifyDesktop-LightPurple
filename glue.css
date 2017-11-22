@@ -833,7 +833,41 @@ th[data-sort]:hover {
 
 
 
-/* Browse section genre blocks text color */
+/** Browse section genre blocks text color **/
+
 .gc-label-text {
     color: white;
 }
+
+
+
+/** Songs text color in table when offline **/
+
+.tl-row.unavailable .tl-highlight, /* Unavailable songs */
+.tl-row.unavailable .tl-cell, /* Unavailable songs */
+.tl-row.unavailable .tl-cell a:link /* Unavailable songs */ {
+	color: #cecece !important;
+}
+
+.offline .tl-row:not(.unavailable):not(.local) .tl-highlight, /* Local songs */
+.offline .tl-row:not(.unavailable):not(.local) .tl-cell, /* Local songs */
+.offline .tl-row:not(.unavailable):not(.local) .tl-cell a:link, /* Local songs */
+.offline .tl-row:not(.unavailable):not(.local).offline-downloaded .tl-highlight, /* Downloaded songs */
+.offline .tl-row:not(.unavailable):not(.local).offline-downloaded .tl-cell, /* Downloaded songs */
+.offline .tl-row:not(.unavailable):not(.local).offline-downloaded .tl-cell a:link /* Downloaded songs */ {
+	color: #404040 !important;
+}
+
+
+
+/** Top Alert (For example "No internet connection detected. Spotify will automatically try to reconnect when it detects an internet connection (error code:4)") **/
+.alert {
+    background-color: #7f1ec6;
+}
+
+.alert .button.button-icon-only {
+    color: white;
+}
+
+
+
