@@ -410,3 +410,19 @@ iframe {
 .NewPlaylistButton:hover {
     color: black;
 }
+
+
+
+
+/** Offline label in sidebar **/
+
+.offline-label-wrapper {
+    background-color: #7f1ec6;
+}
+
+
+/** Expanded album art in sidebar **/
+
+.now-playing-large {
+    border-top: none;
+}
