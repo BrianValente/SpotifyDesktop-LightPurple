@@ -869,5 +869,10 @@ th[data-sort]:hover {
     color: white;
 }
 
+/** Draw the header background with the page navbar **/
 
+.navbar.sticky-top {
+    padding-top: 48px;
+    transform: translateY(-48px);
+}
 

@@ -1,0 +1,23 @@
+/** Move the "Hide Announcements" button a little bit to the bottom **/
+
+.hpto-button {
+	top: 72px;
+}
+
+/** Remove Announcement top margin to draw below top bar **/
+
+.hpto-container {
+	margin-top: 0;
+}
+
+/** Add padding to the Announcement content **/
+
+.ne-container {
+	padding-top: 73px;
+}
+
+/** Remove top bar background **/
+
+.hpto-top-bar { 
+	background: transparent;
+}

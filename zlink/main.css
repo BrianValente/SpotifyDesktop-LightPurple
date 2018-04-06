@@ -426,3 +426,34 @@ iframe {
 .now-playing-large {
     border-top: none;
 }
+
+/** Left Sidebar **/
+
+.sidebar {
+    background-color: #fafafa;
+}
+
+
+/** Header **/
+
+#header.content-top-bar {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, .5), transparent);
+}
+
+/** Add header padding **/
+
+.scrollbar-style-when-scrolling-mac .content-top-bar {
+    padding-right: 16px;
+}
+
+/** Remove header margin **/
+
+.content-top-bar {
+    right: 0;
+}
+
+/** Add padding to "Announcement" (ad) in Browse **/
+
+.ne-container {
+    padding-top: 80px;
+}
