@@ -1,6 +1,6 @@
 # LightPurple Theme for Spotify
 
-![](Screenshots/1.png)
+![](screenshot.png)
 
 ## How to install
 

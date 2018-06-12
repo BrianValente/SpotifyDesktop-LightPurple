@@ -457,3 +457,9 @@ iframe {
 .ne-container {
     padding-top: 80px;
 }
+
+/** Splash screen color **/
+
+#loading {
+	background-color: #fafafa;
+}
